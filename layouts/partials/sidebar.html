@@ -1,0 +1,24 @@
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Len.to</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item {{ if eq .URL "/" }} active {{ end }}" href="/">Blog</a>
+
+    {{ $thisperma := .Permalink }}
+    {{ range .Site.Pages.ByWeight }}
+      {{ if isset .Params "sidebar" }}
+        <a class="sidebar-nav-item {{ if eq .Permalink $thisperma }} active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+    {{ end }}
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; {{ .Site.LastChange.Year }} len.to. all rights reserved.</p>
+  </div>
+</div>

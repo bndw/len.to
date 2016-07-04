@@ -1,0 +1,35 @@
+{{ partial "default_head.html" . }}
+
+<!-- Space delimited list of page types -->
+{{ $paginator := .Paginate (where .Data.Pages "Type" "in" "post") }}
+
+
+
+<div class="posts">
+  {{ range .Paginator.Pages }}
+    <div class="post">
+        <span class="post-date">
+          <a href="{{ .Permalink }}">{{ .Date.Format .Site.Params.DateForm }}</a>
+        </span>
+        {{ .Content }}
+    </div>
+  {{ end }}
+</div>
+
+<div class="pagination">
+
+    {{ if $paginator.HasNext }}
+    <a class="pagination-item older" href="{{ $paginator.Next.URL }}">older</a>
+    {{ else }}
+    <span class="pagination-item older">older</span>
+    {{ end }}
+
+    {{ if $paginator.HasPrev }}
+    <a class="pagination-item newer" href="{{ $paginator.Prev.URL }}">newer</a>
+    {{ else }}
+    <span class="pagination-item newer">newer</span>
+    {{ end }}
+
+</div>
+
+{{ partial "default_foot.html" . }}

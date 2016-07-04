@@ -1,0 +1,12 @@
+{{ partial "default_head.html" . }}
+
+<div class="post">
+  <h1 class="post-title">{{ .Title }}</h1>
+  <ul id="list">
+      {{ range .Data.Pages }}
+        {{ .Render "li"}}
+      {{ end }}
+  </ul>
+</div>
+
+{{ partial "default_foot.html" . }}

@@ -1,0 +1,23 @@
+{
+    "contentdir": "content",
+    "layoutdir": "layouts",
+    "publishdir": "public",
+
+    "builddrafts": false,
+
+    "baseurl": "https://len.to/",
+    "canonifyurls": true,
+    "permalinks": {
+        "post": ":year/:month/:day/:title/",
+        "fixed": ":title/"
+    },
+
+    "pygmentsuseclasses": true,
+
+    "params": {
+        "Title": "len.to",
+        "Tagline": "current",
+        "Author": "",
+        "DateForm": "Jan 2 2006"
+    }
+}
