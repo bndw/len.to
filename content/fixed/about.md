@@ -11,8 +11,8 @@
 <p>
   I was born and raised in Alaska and currently reside in Seattle, Washington,
   by way of a small town in Idaho and a lot of international travel. 
-  I enjoy the outdoors, photography, reading, playing music, rock climbing, wood
-  working, and building software.
+  I enjoy the outdoors, photography, reading, playing music, rock climbing, 
+  and building software.
 </p>
 
 <p>
