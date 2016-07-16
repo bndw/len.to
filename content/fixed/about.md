@@ -6,17 +6,16 @@
 }
 
 <p>
-  Hi, this is the personal website of <b>Ben Woodward</b>.
+  Hi, this is the personal weblog of <b>Ben Woodward</b>.
 </p>
 <p>
   I was born and raised in Alaska and currently reside in Seattle, Washington,
   by way of a small town in Idaho and a lot of international travel. 
-  I enjoy the outdoors, photography, reading, playing music, rock climbing, 
-  and building software.
+  I enjoy the outdoors, photography, reading, rock climbing, and building software.
 </p>
 
 <p>
-  You can learn about my professional work <a href="/work">here</a>. 
+  You can learn about my professional work <a href="https://bdw.to">here</a>. 
   <br>
 If you'd like to get in touch, feel free to send me an email at <a href="mailto:ben@len.to">ben@len.to</a>.
   <br>
