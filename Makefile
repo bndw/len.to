@@ -1,12 +1,17 @@
+ARTIFACT=len.to.tgz
+HOST=alaska
+DEPLOY_SCRIPT=deploy_lento
 
-all: build
+.PHONY: build dev
+
+all: dev
 
 build:
 	hugo
-	tar -czf len.to.tgz public
-	scp len.to.tgz alaska:~/
-	ssh alaska ./deploy_lento
-	rm len.to.tgz
+	tar -czf $(ARTIFACT) public
+	scp $(ARTIFACT) $(HOST):~/
+	ssh $(HOST) ./$(DEPLOY_SCRIPT)
+	rm $(ARTIFACT)
 
 dev:
 	hugo server --buildDrafts
