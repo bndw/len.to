@@ -95,7 +95,12 @@ p.technical-details a {
   color: #666;
 }
 
-
+/*
+ * lightbox close button
+ */
+.featherlight-close-icon {
+  display: none;
+}
 
 /*
  * Masthead
