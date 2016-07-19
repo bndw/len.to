@@ -10,7 +10,7 @@
 </p>
 <br>
 <p>
-If you'd like to get in touch, feel free to send me an email at <a href="mailto:ben@len.to">ben@len.to</a>.
+If you'd like to get in touch, feel free to send mail to <a href="mailto:ben@len.to">ben@len.to</a>
 </p>
 
 <br>
