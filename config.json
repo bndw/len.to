@@ -1,4 +1,5 @@
 {
+    "Paginate": 3,
     "contentdir": "content",
     "layoutdir": "layouts",
     "publishdir": "public",
