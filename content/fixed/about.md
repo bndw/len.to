@@ -15,5 +15,5 @@ If you'd like to get in touch, feel free to send mail to <a href="mailto:ben@len
 
 <br>
 <p class="technical-details">
-&copy; 2016 len all rights reserved
+&copy; 2016 lento all rights reserved
 </p>
