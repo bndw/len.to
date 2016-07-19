@@ -422,6 +422,8 @@ a.sidebar-nav-item:focus {
 
 /* Pagination items can be `span`s or `a`s */
 .pagination-item {
+  color: #ddd;
+  font-size: 0.8em;
   display: block;
   padding: 1rem;
 }
@@ -434,7 +436,6 @@ a.pagination-item:hover {
 }
 a.pagination-item {
   color: #666;
-  font-size: 0.8em;
 }
 
 @media (min-width: 30em) {
