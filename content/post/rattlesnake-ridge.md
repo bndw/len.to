@@ -1,7 +1,7 @@
 +++
 date = "2016-06-03T10:59:14-07:00"
 draft = false
-title = "untitled 002"
+title = "untitled"
 location = "rattlesnake ridge"
 
 +++

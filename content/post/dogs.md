@@ -1,7 +1,7 @@
 +++
 date = "2016-07-17T21:18:54-07:00"
 draft = false
-title = "Olives and Juney"
+title = "olives and juney"
 
 +++
 
