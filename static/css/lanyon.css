@@ -327,11 +327,10 @@ a.sidebar-nav-item:focus {
 
 .page,
 .post {
-  margin-bottom: 5em
+  margin-bottom: 0em;
 }
 
 .post .bottom {
-  border-bottom: solid 1px #eee;
   display: table;
   height: 4em;
   width: 100%;
@@ -345,7 +344,7 @@ a.sidebar-nav-item:focus {
   font-weight: 300;
   text-align: right;
   padding-bottom: 15px;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 /* Blog post or page title */
