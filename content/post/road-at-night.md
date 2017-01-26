@@ -6,4 +6,5 @@ title = "untitled"
 +++
 
 <img src="https://s3-us-west-2.amazonaws.com/ginput/20161028_01_341.jpg">
-
+Northern California<br>
+2016

@@ -6,4 +6,3 @@ title = "untitled"
 +++
 
 <img src="https://s3-us-west-2.amazonaws.com/ginput/20160918_01_101.jpg">
-
