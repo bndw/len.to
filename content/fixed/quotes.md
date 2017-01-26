@@ -1,12 +1,9 @@
-<!--
 {
   "date": "2016-06-11T13:16:56-07:00",
-  "draft": false,
+  "draft": true,
   "title": "quotes",
-  "sidebar": false,
   "weight": "2"
 }
--->
 
 
 “ To the attentive eye, each moment of the year has its own beauty, and in the same field, it beholds, every hour, a picture which was never seen before, and which shall never be seen again. ”
