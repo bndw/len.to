@@ -5,15 +5,12 @@
   "sidebar": true
 }
 
-<p>
-  Hi, this is the personal weblog of <b>Ben Woodward</b>.
-</p>
+<p>lento is an ode to time</p>
 <br>
-<p>
-If you'd like to get in touch, feel free to send mail to <a href="mailto:ben@len.to">ben@len.to</a>
+<p>If you'd like to get in touch, feel free to send mail to <a href="mailto:ben@len.to">ben@len.to</a>
 </p>
 
 <br>
 <p class="technical-details">
-&copy; 2016 lento all rights reserved
+&copy; 2017 lento all rights reserved
 </p>
