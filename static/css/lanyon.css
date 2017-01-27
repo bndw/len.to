@@ -331,8 +331,10 @@ a.sidebar-nav-item:focus {
 }
 
 .post .bottom {
+  border-bottom: solid 1px #f6f6f6;
   display: table;
-  height: 4em;
+  padding-bottom: .5em;
+  margin-bottom: 2em;
   width: 100%;
 }
 

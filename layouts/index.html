@@ -8,10 +8,7 @@
   {{ range (.Paginator 1).Pages }}
     <div class="post">
         {{ .Content }}
-
-        <div class="bottom">
-          <a class="permalink" href="{{ .Permalink }}">permalink</a>
-        </div>
+        <div class="bottom"></div>
     </div>
   {{ end }}
 </div>
