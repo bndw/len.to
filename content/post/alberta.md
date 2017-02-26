@@ -9,8 +9,6 @@ draft = false
 <img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6168.jpg">
 <img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6271.jpg">
 <img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6206.jpg">
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6170.jpg">
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6185.jpg">
 
-Alberta<br>
+Alberta, BC<br>
 February 2017
