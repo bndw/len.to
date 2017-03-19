@@ -1,4 +1,5 @@
 {{ partial "default_head.html" . }}
+<div class="container content">
 
 <!-- Space delimited list of page types -->
 {{ $paginator := .Paginate (where .Data.Pages "Type" "in" "post") }}
@@ -28,5 +29,10 @@
     {{ end }}
 
 </div>
+
+<h5 class="about-btn">
+  <a href="/about">about</a>
+</h5>
+
 
 {{ partial "default_foot.html" . }}
