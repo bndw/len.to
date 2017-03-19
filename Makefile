@@ -6,7 +6,7 @@ DEPLOY_SCRIPT=deploy_lento
 
 all: dev
 
-build:
+deploy:
 	hugo
 	tar -czf $(ARTIFACT) public
 	scp $(ARTIFACT) $(HOST):~/
