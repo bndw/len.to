@@ -7,4 +7,4 @@ prefix=post
 hugo new ${prefix}/${name}
 
 # 2. Cat the template 
-tail -n 3 content/post/aroad.md >> content/${prefix}/${name}
+tail -n 4 content/post/olives_sun.md >> content/${prefix}/${name}
