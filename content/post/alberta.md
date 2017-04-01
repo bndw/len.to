@@ -10,5 +10,5 @@ draft = false
 <img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6271.jpg">
 <img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6206.jpg">
 
-Alberta, BC<br>
-February 2017
+Banff and Jasper in February<br>
+Alberta

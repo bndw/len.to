@@ -7,5 +7,5 @@ draft = false
 
 <img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6335.jpg">
 
-Oregon<br>
-February 2017
+Exploring the back roads<br>
+Illinois River, Oregon

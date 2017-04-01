@@ -7,5 +7,5 @@ draft = false
 
 ![Olives in the sun](/img/DSCF6689.jpg)
 
-Columbia Gorge Canyon, WA<br>
-March 2017
+Olives in the sun<br>
+Columbia Gorge Canyon, Washington
