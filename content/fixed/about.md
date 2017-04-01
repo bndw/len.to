@@ -5,9 +5,14 @@
   "sidebar": true
 }
 
-<p>lento is an ode to time</p>
-<br>
-<p>If you'd like to get in touch, feel free to send mail to <a href="mailto:ben@len.to">ben@len.to</a>
+<p>lento is a photo blog by Ben Woodward.</p>
+
+<p>The name is a Spanish adverb meaning "slowly",
+and serves as a reminder to focus on the present tense.
+</p>
+
+<p>
+Contact: <a href="mailto:ben@len.to">ben@len.to</a>
 </p>
 
 <br>
