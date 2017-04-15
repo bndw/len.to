@@ -5,6 +5,7 @@ date = "2017-04-14T23:19:35-07:00"
 
 +++
 
+![](/img/DSCF6891.jpg)
 ![](/img/DSCF6926.jpg)
 
 Capitol Hill<br>
