@@ -1,6 +1,7 @@
 ARTIFACT=len.to.tgz
 HOST=alaska
 DEPLOY_SCRIPT=deploy_lento
+DEV_URL=http://localhost:1313
 
 .PHONY: build dev
 
@@ -14,4 +15,5 @@ deploy:
 	rm $(ARTIFACT)
 
 dev:
+	open $(DEV_URL)
 	hugo server --buildDrafts
