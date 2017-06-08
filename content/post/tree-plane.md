@@ -5,4 +5,4 @@ title = "tree plane"
 
 +++
 
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF3776.jpg">
+![](https://d17enza3bfujl8.cloudfront.net/DSCF3776.jpg)

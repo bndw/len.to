@@ -5,5 +5,5 @@ title = "saturday"
 
 +++
 
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF3668.jpg">
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF3716.jpg">
+![](https://d17enza3bfujl8.cloudfront.net/DSCF3668.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF3716.jpg)

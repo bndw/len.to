@@ -5,5 +5,4 @@ title = "car camping"
 
 +++
 
-<img src="https://s3-us-west-2.amazonaws.com/ginput/20160815_01_58.jpg">
-
+![](https://d17enza3bfujl8.cloudfront.net/20160815_01_58.jpg)

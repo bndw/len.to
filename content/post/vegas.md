@@ -5,8 +5,8 @@ draft = false
 
 +++
 
-![one](/img/DSCF7113.jpg)
-![two](/img/DSCF7155.jpg)
-![three](/img/DSCF7106.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF7113.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF7155.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF7106.jpg)
 
 Red Rock Canyon, Nevada

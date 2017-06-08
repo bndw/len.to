@@ -5,8 +5,9 @@ draft = false
 
 +++
 
-<img src="https://s3-us-west-2.amazonaws.com/ginput/22410006.jpg">
-<img src="https://s3-us-west-2.amazonaws.com/ginput/22410007.jpg">
+![](https://d17enza3bfujl8.cloudfront.net/22410006.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/22410007.jpg)
+
 Nick / Anthony<br>
 Grand Canyon, Arizona<br>
 2014

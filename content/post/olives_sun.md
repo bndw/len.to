@@ -5,7 +5,7 @@ draft = false
 
 +++
 
-![Olives in the sun](/img/DSCF6689.jpg)
+![Olives in the sun](https://d17enza3bfujl8.cloudfront.net/DSCF6689.jpg)
 
 Olives in the sun<br>
 Columbia Gorge Canyon, Washington

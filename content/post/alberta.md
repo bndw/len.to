@@ -5,10 +5,10 @@ draft = false
 
 +++
 
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6160.jpg">
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6168.jpg">
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6271.jpg">
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6206.jpg">
+![](https://d17enza3bfujl8.cloudfront.net/DSCF6160.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF6168.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF6271.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF6206.jpg)
 
 Banff and Jasper in February<br>
 Alberta

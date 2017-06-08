@@ -5,5 +5,4 @@ title = "tunnel"
 
 +++
 
-<img src="https://s3-us-west-2.amazonaws.com/ginput/20161009_01_36.jpg">
-
+![](https://d17enza3bfujl8.cloudfront.net/20161009_01_36.jpg)

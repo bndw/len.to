@@ -5,5 +5,5 @@ title = "untitled"
 
 +++
 
-<img src="https://s3-us-west-2.amazonaws.com/ginput/20160703_01_36.jpg">
-<img src="https://s3-us-west-2.amazonaws.com/ginput/20160703_01_35.jpg">
+![](https://d17enza3bfujl8.cloudfront.net/20160703_01_36.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/20160703_01_35.jpg)

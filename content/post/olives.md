@@ -5,5 +5,5 @@ title = "olives"
 
 +++
 
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF3643.jpg">
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF3641.jpg">
+![](https://d17enza3bfujl8.cloudfront.net/DSCF3643.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF3641.jpg)

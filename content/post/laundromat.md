@@ -5,5 +5,4 @@ title = "laundromat"
 
 +++
 
-<img src="https://s3-us-west-2.amazonaws.com/ginput/20161028_01_134.jpg">
-
+![](https://d17enza3bfujl8.cloudfront.net/20161028_01_134.jpg)

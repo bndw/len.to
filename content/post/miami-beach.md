@@ -5,7 +5,7 @@ draft = false
 
 +++
 
-![Shadows](/img/DSCF6855.jpg)
-![Beach](/img/DSCF6852.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF6855.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF6852.jpg)
 
 Miami Beach, Florida

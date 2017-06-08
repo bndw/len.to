@@ -5,8 +5,8 @@ draft = false
 
 +++
 
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6585.jpg">
-<img src="https://s3-us-west-2.amazonaws.com/ginput/DSCF6589.jpg">
+![](https://d17enza3bfujl8.cloudfront.net/DSCF6585.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF6589.jpg)
 
 Early season camping<br>
 Skagit River, Washington
