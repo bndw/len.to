@@ -30,8 +30,7 @@ For the next three days time stood still. Summer days in Washington
 seem to last forever, and combined with the commanding landscape of
 the Cascades it's easy to forget everything else. I'm left with warm memories of 
 golden-light filled forests, towering granite walls, sore hands, dirty feet, 
-and the less-warm, yet breathtakingly refreshing dips in mountain rivers.
+and the less-warm, but breathtakingly refreshing dips in mountain rivers.
 
 <br>
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF7263.jpg)
-<br>
