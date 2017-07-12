@@ -3,7 +3,7 @@ HOST=alaska
 DEPLOY_SCRIPT=deploy_lento
 DEV_URL=http://localhost:1313
 
-.PHONY: build dev
+.PHONY: deploy dev
 
 all: dev
 
