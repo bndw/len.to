@@ -4,7 +4,6 @@ date = "2017-07-05T18:11:58-07:00"
 title = "index"
 tags = ["writing", "washington", "climbing"]
 
-
 +++
 
 The sound of a broom whisking over concrete pulled me from sleep.

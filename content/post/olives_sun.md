@@ -2,6 +2,7 @@
 date = "2017-03-26T18:30:28-07:00"
 title = "Olives in the sun"
 draft = false
+tags = ["dogs", "olives", "washington"]
 
 +++
 
