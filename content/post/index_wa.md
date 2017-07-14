@@ -18,7 +18,7 @@ back to Seattle.
 
 One failed nap attempt and half hour later I was invited to join a few friends 
 in Index, Washington. They'd made the trip to Seattle for the wedding but wisely
-planned a few extra days of rock climbing, so, without missing a beat (or changing clothes)
+planned a few extra days of rock climbing. Without missing a beat (or changing clothes)
  I loaded up the car and left. 
 
 <br>
