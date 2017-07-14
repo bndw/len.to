@@ -25,9 +25,8 @@ planned a few extra days of rock climbing, so, without missing a beat (or changi
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF7214.jpg)
 <br>
 
-For the next three days time stood still. Summer days in Washington
-seem to last forever, and combined with the commanding landscape of
-the Cascades it's easy to forget everything else. I'm left with warm memories of 
+Summer days in Washington seem to last forever, and combined with the commanding 
+landscape of the Cascades it's easy to forget everything else. I'm left with warm memories of 
 golden-light filled forests, towering granite walls, sore hands, dirty feet, 
 and the less-warm, but breathtakingly refreshing dips in mountain rivers.
 
