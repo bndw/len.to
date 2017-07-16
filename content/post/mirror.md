@@ -7,5 +7,4 @@ tags = ["washington", "people"]
 +++
 
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF7561.jpg)
-
-Home 🌿 🌵✨
+Home
