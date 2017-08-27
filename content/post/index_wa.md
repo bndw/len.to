@@ -13,8 +13,7 @@ litter into a dustpan and waited until he was a few parking spaces away
 before climbing out of last night's accommodation. 
 I don't always sleep in the back of friends' trucks in hotel parking lots,
 but when I do it's after a wedding. I snagged a cup of orange
-juice from the continental breakfast spread in the lobby and drove 
-back to Seattle.
+juice from the lobby and drove back to Seattle.
 
 One failed nap attempt and half hour later I was invited to join a few friends 
 in Index, Washington. They'd made the trip to Seattle for the wedding but wisely
