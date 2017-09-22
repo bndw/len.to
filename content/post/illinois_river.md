@@ -13,5 +13,4 @@ title = "illinois_river"
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF7865.jpg)
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF7900.jpg)
 
-Roaming around southern Oregon's Illinios River Valley on
-a four wheeler.
+Roaming around southern Oregon's Illinios River Valley
