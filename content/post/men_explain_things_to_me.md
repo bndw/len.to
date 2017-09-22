@@ -2,6 +2,7 @@
 date = "2017-08-31T18:27:34-07:00"
 title = "untitled"
 draft = false
+tags = ["reading", "quotes"]
 
 +++
 
@@ -15,5 +16,3 @@ exploratory, the numinous, the uncertain.
 
 <br>
 Rebecca Solnit, [Woolf's Darkness](http://www.newyorker.com/books/page-turner/woolfs-darkness-embracing-the-inexplicable).
-
-
