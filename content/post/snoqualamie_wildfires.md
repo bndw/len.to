@@ -5,8 +5,8 @@ draft = false
 
 +++
 
-![](https://d17enza3bfujl8.cloudfront.net/DSCF8434.jpg)
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF8432.jpg)
+![](https://d17enza3bfujl8.cloudfront.net/DSCF8434.jpg)
 
 Wildfires<br>
 Wenatchee National Forest, Washington
