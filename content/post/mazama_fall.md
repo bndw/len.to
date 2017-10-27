@@ -7,4 +7,5 @@ draft: false
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF8763.jpg)
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF8772.jpg)
 
-Methow Valley, Washington
+Crisp mornings, golden larches, and rock climbing with hand warmers!<br>
+Fall in Methow, Washington

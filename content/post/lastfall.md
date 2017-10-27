@@ -9,5 +9,4 @@ draft: false
 ![](https://d17enza3bfujl8.cloudfront.net/20161106_01_22.jpg)
 ![](https://d17enza3bfujl8.cloudfront.net/20161106_01_36.jpg)
 
-This time last year,<br>
-Washington
+Found a few shots from a trip to the Wenatchee national forest around this time last year with Jacob and Julian
