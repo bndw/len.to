@@ -9,6 +9,7 @@ Uploads a file to the ginput s3 bucket
 
 Usage: $0 <path_to_image>
 EOF
+  exit 1
 fi
 
 bucket=ginput
