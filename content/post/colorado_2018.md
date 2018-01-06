@@ -6,6 +6,3 @@ draft: false
 
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF9021.jpg)
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF8997.jpg)
-
-Red Mountain, Colorado
-
