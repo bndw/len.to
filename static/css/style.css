@@ -4,21 +4,26 @@ html, body {
   font-size: 10pt;
 }
 
-h1, h2, h3, h4 h5 {
-  font-size: 1.3em;
+a {
+  color: #404040;
 }
 
 img {
   box-sizing: border-box; 
   border-radius: 4px;
   max-width: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 0.3em;
   opacity: 0.9;
 }
 
 li {
   margin-bottom: 0;
 }
+
+h1, h2, h3, h4 h5 {
+  font-size: 1.3em;
+}
+
 
 p {
   margin-bottom: 0;
@@ -30,9 +35,11 @@ p {
 }
 
 .title {
-  font-size: 1.3em;
+  display: block;
+  font-size: 1.6rem;
   padding-top: 1em;
   padding-bottom: 1em;
+  text-decoration: none;
 }
 
 .left-side {
