@@ -4,6 +4,10 @@ html, body {
   font-size: 10pt;
 }
 
+h1, h2, h3, h4 h5 {
+  font-size: 1.3em;
+}
+
 img {
   box-sizing: border-box; 
   border-radius: 4px;
