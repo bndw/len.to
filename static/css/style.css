@@ -1,0 +1,51 @@
+html, body {
+  color: #404040;
+  font-family: sans-serif;
+  font-size: 10pt;
+}
+
+img {
+  box-sizing: border-box; 
+  border-radius: 4px;
+  max-width: 100%;
+  margin-bottom: 2em;
+  opacity: 0.9;
+}
+
+li {
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.container {
+  padding-left: 1.6em;
+  margin: 0;
+}
+
+.title {
+  font-size: 1.3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.left-side {
+}
+
+.right-side {
+  margin-top: 10px;
+}
+
+.pagination {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.pagination-item {
+  padding-left: 0.8em;
+}
+
+@media (min-width: 550px) {
+}

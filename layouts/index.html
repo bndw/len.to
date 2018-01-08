@@ -1,39 +1,5 @@
-{{  partial "default_head.html" . }}
-<div class="container content">
-
-<!-- Space delimited list of page types -->
-{{ $paginator := .Paginate (where .Data.Pages "Type" "in" "post") }}
-
-
-<div class="posts">
-  {{ range (.Paginator 1).Pages }}
-    <div class="post">
-      {{ .Content }}
-      <div class="bottom"></div>
-    </div>
-  {{ end }}
-</div>
-
-<div class="pagination">
-
-    {{ if $paginator.HasPrev }}
-    <a class="pagination-item newer" href="{{ $paginator.Prev.URL }}">prev</a>
-    {{ else }}
-    <span class="pagination-item newer">prev</span>
-    {{ end }}
-
-    {{ if $paginator.HasNext }}
-    <a class="pagination-item older" href="{{ $paginator.Next.URL }}">next</a>
-    {{ else }}
-    <span class="pagination-item older">next</span>
-    {{ end }}
-
-</div>
-
-<h5 class="about-btn">
-  <a href="/about">about</a>
-</h5>
-
-
-{{ partial "default_foot.html" . }}
-
+<!DOCTYPE HTML>
+<html>
+  {{ partial "header/site-header.html" . }}
+  {{ partial "body/site-body.html" . }}
+</html>
