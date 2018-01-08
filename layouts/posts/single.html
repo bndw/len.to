@@ -1,0 +1,17 @@
+{{ partial "header/site-header.html" . }}
+
+<div class="container">
+  <div class="row">
+
+    <div class="three columns left-side">
+      {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+    </div>
+
+    <div class="nine columns right-side">
+      {{ .Content }}
+    </div>
+
+  </div>
+
+</div>
+
