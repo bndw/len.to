@@ -20,9 +20,9 @@
         <div class="pagination u-pull-right">
           {{ if $paginator.HasNext }}
             {{ if $paginator.HasPrev }}
-              <a class="pagination-item" href="{{ $paginator.Prev.URL }}">back</a>
+              <a id="pagination-prev" class="pagination-item" href="{{ $paginator.Prev.URL }}">back</a>
             {{ end }}
-            <a class="pagination-item" href="{{ $paginator.Next.URL }}">next</a>
+            <a id="pagination-next" class="pagination-item" href="{{ $paginator.Next.URL }}">next</a>
           {{ else }}
             fin
           {{ end }}
