@@ -1,6 +1,6 @@
 ---
 title: "running into the weekend"
-date: 2018-02-05T20:04:00-08:00
+date: 2018-02-03T20:04:00-08:00
 draft: false
 ---
 
