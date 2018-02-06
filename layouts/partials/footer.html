@@ -23,23 +23,25 @@
 
   document.addEventListener("keydown", function(e) {
     switch(e.which) {
-      case 37: // left
+      case 37:
+        // left
         paginator.prev();
+        e.preventDefault();
         break;
 
-      case 38: // up
-        break;
-
-      case 39: // right
+      case 39:
+        // right
         paginator.next();
+        e.preventDefault();
         break;
 
-      case 40: // down
+      // up
+      case 38:
         break;
-
-      default: return; // exit this handler for other keys
+      // down
+      case 40:
+        break;
     }
-    e.preventDefault(); // prevent the default action (scroll / move caret)
   }, false);
 })()
 </script>
