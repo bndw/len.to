@@ -11,4 +11,4 @@ draft: false
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF9260.jpg)
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF9283.jpg)
 
-Mt. Rainier, Washington
+A fun afternoon at Mt. Rainier
