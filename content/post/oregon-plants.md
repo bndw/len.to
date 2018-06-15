@@ -7,4 +7,3 @@ draft: false
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF7796.jpg)
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF7801.jpg)
 
-Oregon
