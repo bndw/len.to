@@ -1,9 +1,0 @@
-+++
-date = "2016-06-18T23:33:44-07:00"
-draft = false
-title = "saturday"
-
-+++
-
-![](https://d17enza3bfujl8.cloudfront.net/DSCF3668.jpg)
-![](https://d17enza3bfujl8.cloudfront.net/DSCF3716.jpg)
