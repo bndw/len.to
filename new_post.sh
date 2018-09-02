@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-name=$1.md
+id=$(uuidgen | tr "[:upper:]" "[:lower:]")
+name=${id}.md
 prefix=post
 
 # 1. Create the post
