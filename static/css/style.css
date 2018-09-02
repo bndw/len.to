@@ -58,5 +58,9 @@ p {
   padding-left: 0.8em;
 }
 
+.permalink {
+  text-decoration: none;
+}
+
 @media (min-width: 550px) {
 }
