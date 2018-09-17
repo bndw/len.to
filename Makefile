@@ -26,6 +26,9 @@ deploy:
 	ssh $(HOST) ./$(DEPLOY_SCRIPT)
 	rm $(ARTIFACT)
 
+live:
+	hugo server
+
 dev: build stop
 	docker run -d --name len.to -p 5000:80 $(TAG)
 	open $(DEV_URL)
