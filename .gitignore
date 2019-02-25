@@ -1,4 +1,3 @@
-jekyll/**
-public/**
-hugout/**
 .build/
+public/
+bin/

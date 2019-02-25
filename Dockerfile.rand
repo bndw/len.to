@@ -1,0 +1,3 @@
+FROM alpine:latest
+
+COPY .bin/rand /rand

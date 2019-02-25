@@ -28,3 +28,8 @@ deploy: build
 dev:
 	open http://localhost:1313
 	hugo server
+
+.PHONY: build-rand
+build-rand:
+	GOOS=linux go build -o bin/rand-linux ./cmd/rand
+	go build -o bin/rand ./cmd/rand
