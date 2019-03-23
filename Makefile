@@ -15,7 +15,6 @@ build: clean
 	hugo
 	cp -R root/* .build/
 	cp -R public/* .build/var/www/len.to/
-	docker build -t $(TAG) .
 
 .PHONY: deploy 
 deploy: build

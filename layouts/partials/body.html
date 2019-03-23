@@ -11,7 +11,14 @@
     <div class="row">
 
       <div class="three columns left-side">
-        <a class="permalink" href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
+        <div>
+          <a class="permalink" href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
+        </div>
+        {{ if .Params.Location }}
+        <div>
+          <a class="permalink" href="{{ .Permalink }}">{{ .Params.Location }}</a>
+        </div>
+        {{ end }}
       </div>
 
       <div class="nine columns right-side">
