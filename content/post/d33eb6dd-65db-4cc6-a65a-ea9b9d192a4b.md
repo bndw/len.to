@@ -8,5 +8,3 @@ location = "Skagit River, WA"
 
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF6585.jpg)
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF6589.jpg)
-
-Early season camping
