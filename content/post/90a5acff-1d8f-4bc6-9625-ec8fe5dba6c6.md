@@ -7,5 +7,3 @@ location = "Miami Beach, FL"
 +++
 
 ![](https://d17enza3bfujl8.cloudfront.net/DSCF6855.jpg)
-![](https://d17enza3bfujl8.cloudfront.net/DSCF6852.jpg)
-
