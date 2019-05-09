@@ -1,6 +1,7 @@
 TAG=bndw/len.to
 ARTIFACT=len.to.tgz
 HOST=alaska
+CI_HOST=len.to
 DEPLOY_SCRIPT=deploy_lento
 
 all: dev
@@ -21,6 +22,13 @@ deploy: build
 	tar -czf $(ARTIFACT) public
 	scp $(ARTIFACT) $(HOST):~/
 	ssh $(HOST) ./$(DEPLOY_SCRIPT)
+	rm $(ARTIFACT)
+
+.PHONY: deploy.ci
+deploy.ci: build
+	tar -czf $(ARTIFACT) public
+	scp $(ARTIFACT) $(CI_HOST):~/
+	ssh $(CI_HOST) ./$(DEPLOY_SCRIPT)
 	rm $(ARTIFACT)
 
 .PHONY: dev
