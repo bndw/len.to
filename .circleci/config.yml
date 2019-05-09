@@ -1,9 +1,6 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - master
     working_directory: /tmp
     docker:
       - image: debian:buster
@@ -20,3 +17,7 @@ workflows:
   build:
     jobs:
       - build
+        filters:
+          branches:
+            only:
+              - master
