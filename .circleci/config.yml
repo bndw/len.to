@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:buster
+    steps:
+      - checkout
+      - run: apt-get update && apt-get install build-essential openssh-client hugo -y
+      - add_ssh_keys:
+          fingerprints:
+            - "6e:66:1e:13:b2:d4:e6:a0:d2:21:75:48:52:3a:ee:51"
+      - run: make deploy.ci
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master

@@ -1,6 +1,7 @@
 TAG=bndw/len.to
 ARTIFACT=len.to.tgz
 HOST=alaska
+CI_HOST=sysadm@len.to
 DEPLOY_SCRIPT=deploy_lento
 
 all: dev
@@ -22,6 +23,14 @@ deploy: build
 	scp $(ARTIFACT) $(HOST):~/
 	ssh $(HOST) ./$(DEPLOY_SCRIPT)
 	rm $(ARTIFACT)
+
+.PHONY: deploy.ci
+deploy.ci:
+	@hugo
+	@tar -czf $(ARTIFACT) public
+	@scp -o "StrictHostKeyChecking=no" -P $(PORT) $(ARTIFACT) $(CI_HOST):~/
+	@ssh -o "StrictHostKeyChecking=no" -p $(PORT) $(CI_HOST) ./$(DEPLOY_SCRIPT)
+	@rm $(ARTIFACT)
 
 .PHONY: dev
 dev:
