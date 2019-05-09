@@ -1,7 +1,9 @@
+# NOTE: deploy.ci depends on the following environment variables:
+# - CI_HOST
+# - PORT
 TAG=bndw/len.to
 ARTIFACT=len.to.tgz
 HOST=alaska
-CI_HOST=sysadm@len.to
 DEPLOY_SCRIPT=deploy_lento
 
 all: dev
@@ -28,7 +30,7 @@ deploy: build
 deploy.ci:
 	@hugo
 	@tar -czf $(ARTIFACT) public
-	@scp -o "StrictHostKeyChecking=no" -P $(PORT) $(ARTIFACT) $(CI_HOST):~/
+	@scp -o "StrictHostKeyChecking=no" -P $(PORT) $(ARTIFACT) $(CI_HOST):~/ > /dev/null 2>&1
 	@ssh -o "StrictHostKeyChecking=no" -p $(PORT) $(CI_HOST) ./$(DEPLOY_SCRIPT)
 	@rm $(ARTIFACT)
 
