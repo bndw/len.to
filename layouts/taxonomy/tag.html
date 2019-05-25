@@ -5,16 +5,16 @@
   </head>
   <body>
 
-		<div class="container">
+    <div class="container">
 
-			<div class="row">
-				<div class="three columns">
-					<a class="title" href="/">len.to</a>
-				</div>
-			</div>
+      <div class="row">
+        <div class="three columns">
+          <a class="title" href="/">len.to</a>
+        </div>
+      </div>
 
-			<div class="row">
-				<div class="twelve columns right-side">
+      <div class="row">
+        <div class="twelve columns right-side">
           <pre>~/ <a href="/tags">tags</a> / <a href="/tags/{{ .Data.Term}}">{{ .Data.Term }}</a></pre>
 
           <ul>
@@ -27,10 +27,10 @@
             {{ end }}
           </ul>
 
-				</div>
-			</div>
+        </div>
+      </div>
 
-		</div>
+    </div>
 
     {{ partial "footer.html" . }}
   </body>
