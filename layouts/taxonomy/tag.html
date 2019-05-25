@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    {{ partial "header.html" . }}
+  </head>
+  <body>
+
+		<div class="container">
+
+			<div class="row">
+				<div class="three columns">
+					<a class="title" href="/">len.to</a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="twelve columns right-side">
+          <h2>{{ .Data.Term | humanize | title }}</h2>
+
+          <ul>
+            {{ range .Data.Pages }}
+            <li>
+              <a class="permalink" href="{{ .RelPermalink }}">
+                {{ if eq .Data.Term "trip-reports" }}
+                <span>{{ dateFormat "Jan 2, 2006" .Date }} &nbsp; <strong>{{ .Title }}</strong> {{ .Params.Location }}</span>
+                {{ else }}
+                <span>{{ dateFormat "Jan 2, 2006" .Date }} &nbsp; {{ .Params.Location }}</span>
+                {{ end }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+
+				</div>
+			</div>
+
+		</div>
+
+    {{ partial "footer.html" . }}
+  </body>
+</html>
