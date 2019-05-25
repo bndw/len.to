@@ -15,7 +15,14 @@
 
 			<div class="row">
 				<div class="twelve columns right-side">
-					{{ partial "trip-reports.html" . }}
+          <pre><a href="/">~/</a> <a href="/tags">tags</a></pre>
+
+          <ul>
+          {{ range site.Taxonomies.tags }}
+            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+          {{ end }}
+          </ul>
+
 				</div>
 			</div>
 
@@ -24,3 +31,4 @@
     {{ partial "footer.html" . }}
   </body>
 </html>
+

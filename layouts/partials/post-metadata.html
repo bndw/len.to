@@ -3,11 +3,9 @@
 {{ end }}
 
 {{ if .Params.Tags }}
+<ul class="tags">
 	{{ range $tag := .Params.Tags }}
-		{{ if eq $tag "trip report" }}
-			<div>
-				<a href="/trip-reports">Trip Reports</a>
-			</div>
-		{{ end }}
+    <li><a href="/tags/{{ $tag }}">{{ $tag | humanize | lower }}</a></li>
 	{{ end }}
+</ul>
 {{ end }}
