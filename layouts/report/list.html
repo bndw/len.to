@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    {{ partial "header.html" . }}
+  </head>
+  <body>
+
+		<div class="container">
+
+			<div class="row">
+				<div class="three columns">
+					<a class="title" href="/">len.to</a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="twelve columns right-side">
+					{{ partial "trip-reports.html" . }}
+				</div>
+			</div>
+
+		</div>
+
+    {{ partial "footer.html" . }}
+  </body>
+</html>
