@@ -15,16 +15,12 @@
 
 			<div class="row">
 				<div class="twelve columns right-side">
-          <pre>~/ <a href="/tags">tags</a> / <a href="/tags/{{ .Data.Term}}">{{ .Data.Term }}</a></pre>
+          <pre>~/ <a href="/tags">tags</a></pre>
 
           <ul>
-            {{ range .Data.Pages }}
-            <li>
-              <a class="permalink" href="{{ .RelPermalink }}">
-                <span>{{ dateFormat "Jan 2, 2006" .Date }} &nbsp; {{ .Params.Location }}</span>
-              </a>
-            </li>
-            {{ end }}
+          {{ range site.Taxonomies.tags }}
+            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+          {{ end }}
           </ul>
 
 				</div>
@@ -35,3 +31,4 @@
     {{ partial "footer.html" . }}
   </body>
 </html>
+

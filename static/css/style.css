@@ -27,6 +27,10 @@ p {
   margin-bottom: 0;
 }
 
+pre {
+  margin: 1em;
+}
+
 footer {
   margin-top: 1em;
 }
