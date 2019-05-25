@@ -14,9 +14,9 @@
         <div>
           <a class="permalink" href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
         </div>
-        {{ if .Params.Location }}
-        <div>{{ .Params.Location }}</div>
-        {{ end }}
+
+				{{ partial "post-metadata.html" . }}
+
       </div>
 
       <div class="nine columns right-side">

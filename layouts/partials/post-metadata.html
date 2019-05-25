@@ -1,0 +1,13 @@
+{{ if .Params.Location }}
+<div>{{ .Params.Location }}</div>
+{{ end }}
+
+{{ if .Params.Tags }}
+	{{ range $tag := .Params.Tags }}
+		{{ if eq $tag "trip report" }}
+			<div>
+				<a href="/trip-reports">Trip Reports</a>
+			</div>
+		{{ end }}
+	{{ end }}
+{{ end }}
