@@ -14,16 +14,31 @@
       </div>
 
       <div class="row">
-        <div class="twelve columns right-side">
-          <pre><a href="/">~/</a> <a href="/tags">tags</a> / <a href="/tags/{{ .Data.Term}}">{{ .Data.Term }}</a></pre>
+        <div class="three columns right-side">
+          <div>
+            <a href="/">~/</a> <a href="/tags">tags</a> / <a href="/tags/{{ .Data.Term}}">{{ .Data.Term }}</a>
+          </div>
 
-          <ul>
+        </div>
+        <div class="nine columns right-side">
+          <div id="toggle-btn">&#9744;</div>
+
+          <ul class="tag-posts">
             {{ range .Data.Pages }}
-            <li>
+
+            <li class="short">
               <a class="permalink" href="{{ .RelPermalink }}">
                 <span>{{ dateFormat "Jan 2, 2006" .Date }} &nbsp; {{ .Params.Location }}</span>
               </a>
             </li>
+
+            <li class="long hidden">
+              <a class="permalink" href="{{ .RelPermalink }}">
+                <span>{{ dateFormat "Jan 2, 2006" .Date }} &nbsp; {{ .Params.Location }}</span>
+              </a>
+              {{ .Content }}
+            </li>
+
             {{ end }}
           </ul>
 
@@ -31,6 +46,51 @@
       </div>
 
     </div>
+
+    <script>
+    (function(){
+      document.getElementById("toggle-btn").addEventListener("click", function() {
+        var btn = this;
+
+        var hide = function(elements) {
+          for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.add("hidden");
+          }
+          return true;
+        };
+
+        var show = function(elements) {
+          for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.remove("hidden");
+          };
+          return true;
+        };
+
+        var toggleButton = function(element, on) {
+          if (on) {
+            element.innerHTML = "&#9744;"; // ☒ 
+          } else {
+            element.innerHTML = "&#9746;"; // ☐
+          }
+          return true;
+        }
+
+        if (long.length < 1 || short.length < 1 ) {
+          return;
+        }
+
+        var long           = document.getElementsByClassName("long"),
+            short          = document.getElementsByClassName("short"),
+            shortIsVisible = long[0].classList.container("hidden");
+
+        if (shortIsVisible) {
+          hide(short) && show(long) && toggleButton(btn, false);
+        } else {
+          hide(long) && show(short) && toggleButton(btn, true);
+        }
+      });
+    })()
+    </script>
 
     {{ partial "footer.html" . }}
   </body>

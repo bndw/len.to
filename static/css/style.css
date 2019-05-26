@@ -51,17 +51,26 @@ footer {
 .left-side {
 }
 
+.hidden {
+  display: none;
+}
+
+#toggle-btn {
+  cursor: pointer;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
 ul.tags {
   margin-top: 1em;
 }
-/*
-ul.tags li {
-  display: inline-block;
+ul.tag-posts > li.short {
 }
-.tags li + li:before {
-    content: ", ";
+ul.tag-posts > li.long {
+  list-style-type: none;
+  margin-bottom: 2.5em;
 }
-*/
 
 .right-side {
   font-size: 1.3em;
