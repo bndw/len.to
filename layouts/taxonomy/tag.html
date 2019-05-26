@@ -14,16 +14,35 @@
       </div>
 
       <div class="row">
-        <div class="twelve columns right-side">
-          <pre><a href="/">~/</a> <a href="/tags">tags</a> / <a href="/tags/{{ .Data.Term}}">{{ .Data.Term }}</a></pre>
+        <div class="three columns right-side">
+          <div>
+            <a href="/">~/</a> <a href="/tags">tags</a> / <a href="/tags/{{ .Data.Term}}">{{ .Data.Term }}</a>
+          </div>
 
-          <ul>
+        </div>
+        <div class="nine columns right-side">
+          <div id="toggle-btn">☒</div>
+
+          <ul class="tag-posts">
             {{ range .Data.Pages }}
-            <li>
+
+            <li class="short hidden">
               <a class="permalink" href="{{ .RelPermalink }}">
                 <span>{{ dateFormat "Jan 2, 2006" .Date }} &nbsp; {{ .Params.Location }}</span>
               </a>
             </li>
+
+            <li class="long">
+              <div class="content">
+                <a class="permalink" href="{{ .RelPermalink }}">
+                  <span>{{ dateFormat "Jan 2, 2006" .Date }} &nbsp; {{ .Params.Location }}</span>
+                </a>
+                {{ .Content }}
+              </div>
+              <div class="content-images">
+              </div>
+            </li>
+
             {{ end }}
           </ul>
 
@@ -31,6 +50,65 @@
       </div>
 
     </div>
+
+    <script>
+    (function(){
+      document.getElementById("toggle-btn").addEventListener("click", function() {
+        var hide = function(elements) {
+          for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.add("hidden");
+          }
+          return true;
+        };
+
+        var show = function(elements) {
+          for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.remove("hidden");
+          };
+          return true;
+        };
+
+        var btn            = this,
+            long           = document.getElementsByClassName("long"),
+            short          = document.getElementsByClassName("short"),
+            missingContent = (long.length < 1 || short.length < 1),
+            shortIsVisible = !missingContent && long[0].classList.contains("hidden");
+
+        if (missingContent) return;
+
+        if (shortIsVisible) {
+          hide(short) && show(long) && (btn.innerHTML = "☒");
+        } else {
+          hide(long) && show(short) && (btn.innerHTML = "☐");
+        }
+      });
+
+      var content = document.getElementsByClassName("content"),
+          imageContainer = document.getElementsByClassName('content-images')[0];
+
+      for (var i = 0; i < content.length; i++) {
+        var post      = content[i],
+            permalink = post.getElementsByClassName("permalink")[0],
+            images    = post.getElementsByTagName("img");
+
+        // Hide the original post
+        content[i].classList.add("hidden");
+
+        // Strip everything from the permalink
+        while (permalink.firstChild) {
+          permalink.removeChild(permalink.firstChild);
+        }
+
+        // Wrap all images in the permalink
+        for (var x = 0; x < images.length; x++) {
+          permalink.appendChild(images[x])
+        }
+
+        imageContainer.appendChild(permalink);
+      }
+
+    })()
+    </script>
 
     {{ partial "footer.html" . }}
   </body>
