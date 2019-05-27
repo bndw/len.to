@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    {{ partial "header.html" . }}
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="three columns title">
+          <span>
+            <a id="home" href="/">len.to</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns left-side">
+          About
+        </div>
+        <div class="nine columns right-side">
+          <p>len.to is a photography blog by <a target="_blank" href="https://bdw.to">Ben Woodward</a>.</p>
+          <br>
+          <p>All images © 2015-{{ now.Format "2006"}} Ben Woodward.</p>
+          <p>This website is <a target="_blank" href="https://github.com/bndw/len.to">open source</a> and continuously deployed with <a target="_blank" href="https://circleci.com/gh/bndw/len.to">CircleCI</a>.</p>
+          <br>
+          <img src="https://img.shields.io/circleci/build/github/bndw/len.to.svg?style=flat-square">
+          <br>
+        </div>
+      </div>
+
+    </div>
+
+    {{ partial "footer.html" . }}
+  </body>
+</html>
