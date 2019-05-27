@@ -16,7 +16,7 @@
       <div class="row">
         <div class="three columns right-side">
           <div>
-            <a href="/">~/</a> <a href="/tags">tags</a> / <a href="/tags/{{ .Data.Term}}">{{ .Data.Term }}</a>
+            <a href="/">~/</a> <a href="/tags">tags</a> / <a id="term" href="/tags/{{ .Data.Term}}">{{ .Data.Term }}</a>
           </div>
 
         </div>
@@ -53,6 +53,7 @@
 
     <script>
     (function(){
+      // toggle the layout between image only (default) and full content.
       document.getElementById("toggle-btn").addEventListener("click", function() {
         var hide = function(elements) {
           for (var i = 0; i < elements.length; i++) {
@@ -83,8 +84,13 @@
         }
       });
 
-      var content = document.getElementsByClassName("content"),
-          imageContainer = document.getElementsByClassName('content-images')[0];
+
+      var content        = document.getElementsByClassName("content"),
+          imageContainer = document.getElementsByClassName('content-images')[0],
+          term           = document.getElementById("term").innerHTML;
+
+      // If the current tag is quotes then exit early.
+      if (term === "quotes") return;
 
       for (var i = 0; i < content.length; i++) {
         var post      = content[i],
