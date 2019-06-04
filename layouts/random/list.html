@@ -1,0 +1,4 @@
+<script>
+var posts = [{{ range (where .Site.AllPages "Type" "in" "posts") | shuffle }}{{ .Permalink }},{{ end }}];
+window.location = posts[Math.floor(Math.random()*posts.length)];
+</script>
