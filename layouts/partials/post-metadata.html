@@ -1,11 +1,7 @@
-{{ if .Params.Location }}
-<div>{{ .Params.Location }}</div>
-{{ end }}
-
 {{ if .Params.Tags }}
 <ul class="tags">
 	{{ range $tag := .Params.Tags }}
-    <li><a href="/tags/{{ $tag }}">{{ $tag | humanize | lower }}</a></li>
+    <li><a href="/tags/{{ $tag | urlize }}">{{ $tag | lower }}</a></li>
 	{{ end }}
 </ul>
 {{ end }}

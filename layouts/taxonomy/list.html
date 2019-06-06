@@ -22,8 +22,8 @@
 				<div class="nine columns right-side">
 
           <ul>
-          {{ range site.Taxonomies.tags }}
-            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+          {{ range sort site.Taxonomies.tags }}
+          <li>({{ .Count }}) <a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a></li>
           {{ end }}
           </ul>
 
