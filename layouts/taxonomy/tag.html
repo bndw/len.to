@@ -16,7 +16,7 @@
       <div class="row">
         <div class="three columns right-side">
           <div>
-            <a href="/">~/</a> <a href="/tags">tags</a> / <a id="term" href="/tags/{{ .Data.Term}}">{{ .Data.Term }}</a>
+            <a href="/">~/</a> <a href="/tags">tags</a> / <a id="term" href="/tags/{{ .Data.Term | urlize}}">{{ .Data.Term | lower }}</a>
           </div>
 
         </div>
