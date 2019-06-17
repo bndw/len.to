@@ -1,7 +1,0 @@
-{{ if .Params.Tags }}
-<ul class="tags">
-	{{ range $tag := .Params.Tags }}
-    <li><a href="/tags/{{ $tag | urlize }}">{{ $tag | lower }}</a></li>
-	{{ end }}
-</ul>
-{{ end }}

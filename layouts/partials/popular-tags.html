@@ -1,0 +1,7 @@
+<ul class="tags">
+	<div>popular tags</div>
+	{{ range sort (sort site.Taxonomies.tags) "Count" "desc" }}
+		<li><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a></li>
+	{{ end }}
+	<a href="/tags">+view all</a>
+</ul>

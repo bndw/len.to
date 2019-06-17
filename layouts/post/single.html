@@ -18,11 +18,11 @@
             <a class="permalink" href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
           </div>
 
-					{{ partial "post-metadata.html" . }}
         </div>
 
         <div class="nine columns right-side">
           {{ .Content }}
+					{{ partial "post-tags.html" . }}
         </div>
       </div>
 
