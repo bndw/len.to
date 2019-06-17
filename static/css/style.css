@@ -63,9 +63,28 @@ footer {
   padding-bottom: 10px;
 }
 
-ul.tags {
-  margin-top: 1em;
+.post-title {
+	display: inline-block;
+	font-size: 1em;
+	margin-bottom: 1em;
 }
+
+.post-tags{
+	font-size: 0.8em;
+	padding: 1em 0em;
+}
+
+ul.tags {
+	display: none;
+  margin-top: 1.8em;
+}
+ul.tags li{
+	display: none;
+}
+ul.tags div {
+	margin-bottom: 0.8em;
+}
+
 ul.tag-posts > li.short {
 }
 ul.tag-posts > li.long {
@@ -74,7 +93,7 @@ ul.tag-posts > li.long {
 }
 
 .right-side {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .pagination {
@@ -87,8 +106,13 @@ ul.tag-posts > li.long {
 }
 
 .permalink {
-  text-decoration: none;
 }
 
 @media (min-width: 550px) {
+	ul.tags {
+		display: initial;
+	}
+	ul.tags li:nth-child(-n+11){
+		display:block;
+	} 
 }
