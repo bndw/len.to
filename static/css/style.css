@@ -79,10 +79,11 @@ ul.tags {
   margin-top: 1.8em;
 }
 ul.tags li{
-	display: none;
+  list-style-type: none;
+	padding-left: 12px;
 }
 ul.tags div {
-	margin-bottom: 0.8em;
+	margin-bottom: 10px;
 }
 
 ul.tag-posts > li.short {
@@ -112,7 +113,4 @@ ul.tag-posts > li.long {
 	ul.tags {
 		display: initial;
 	}
-	ul.tags li:nth-child(-n+11){
-		display:block;
-	} 
 }
