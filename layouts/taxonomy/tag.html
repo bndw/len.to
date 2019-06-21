@@ -21,7 +21,7 @@
 
         </div>
         <div class="nine columns right-side">
-          <div id="toggle-btn">☒</div>
+          <div id="toggle-btn">view list</div>
 
           <ul class="tag-posts">
             {{ range .Data.Pages }}
@@ -78,9 +78,9 @@
         if (missingContent) return;
 
         if (shortIsVisible) {
-          hide(short) && show(long) && (btn.innerHTML = "☒");
+          hide(short) && show(long) && (btn.innerHTML = "view list");
         } else {
-          hide(long) && show(short) && (btn.innerHTML = "☐");
+          hide(long) && show(short) && (btn.innerHTML = "view images");
         }
       });
 
