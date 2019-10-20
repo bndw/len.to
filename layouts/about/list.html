@@ -20,13 +20,20 @@
           About
         </div>
         <div class="nine columns right-side">
-          <p>len.to is a photography blog by <a target="_blank" href="https://bdw.to">Ben Woodward</a>.</p>
+          <p>len.to is a photo blog.</p>
+          <p>© 2015-{{ now.Format "2006"}} <a target="_blank" href="https://bdw.to">Ben Woodward</a></p>
+
           <br>
-          <p>All images © 2015-{{ now.Format "2006"}} Ben Woodward.</p>
-          <p>This website is <a target="_blank" href="https://github.com/bndw/len.to">open source</a> and continuously deployed with <a target="_blank" href="https://circleci.com/gh/bndw/len.to">CircleCI</a>.</p>
+            <a target="_blank" href="https://github.com/bndw/len.to">Source code</a>
           <br>
-          <img src="https://img.shields.io/circleci/build/github/bndw/len.to.svg?style=flat-square">
+          Hugo version {{ hugo.Version }}.
           <br>
+          Last updated {{ .Site.LastChange }}.
+          <br>
+          <br>
+          <p><a target="_blank" href="https://circleci.com/gh/bndw/len.to">
+            <img src="https://img.shields.io/circleci/build/github/bndw/len.to.svg?style=flat-square">
+          </a>
         </div>
       </div>
 
