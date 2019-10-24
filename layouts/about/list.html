@@ -26,10 +26,9 @@
           <br>
             <a target="_blank" href="https://github.com/bndw/len.to">Source code</a>
           <br>
-          Hugo version {{ hugo.Version }}.
+          Last updated {{ .Site.LastChange }}
           <br>
-          Last updated {{ .Site.LastChange }}.
-          <br>
+          Commit <a href="https://github.com/bndw/len.to/commit/{{ .GitInfo.Hash }}">{{ .GitInfo.Hash }}</a>
           <br>
           <p><a target="_blank" href="https://circleci.com/gh/bndw/len.to">
             <img src="https://img.shields.io/circleci/build/github/bndw/len.to.svg?style=flat-square">

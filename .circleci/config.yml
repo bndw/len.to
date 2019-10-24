@@ -5,7 +5,7 @@ jobs:
       - image: debian:buster
     steps:
       - checkout
-      - run: apt-get update && apt-get install build-essential curl openssh-client -y
+      - run: apt-get update && apt-get install build-essential curl git openssh-client -y
       - run: curl -L https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz | tar xvz -- && mv ./hugo /usr/local/bin
       - add_ssh_keys:
           fingerprints:
