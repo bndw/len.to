@@ -1,6 +1,5 @@
 baseURL = "https://len.to/"
 languageCode = "en-us"
 title = "len.to"
-enableGitInfo = true
 [permalinks]
   post = "/post/:title/"
