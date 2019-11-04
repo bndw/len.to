@@ -21,19 +21,15 @@
         </div>
         <div class="nine columns right-side">
           <p>len.to is a photo blog.</p>
-          <p>© 2015-{{ now.Format "2006"}} <a target="_blank" href="https://bdw.to">Ben Woodward</a></p>
+          <br>
 
-          <br>
-            <a target="_blank" href="https://github.com/bndw/len.to">Source code</a>
-          <br>
-          Hugo version {{ hugo.Version }}.
-          <br>
-          Last updated {{ .Site.LastChange }}.
-          <br>
-          <br>
-          <p><a target="_blank" href="https://circleci.com/gh/bndw/len.to">
-            <img src="https://img.shields.io/circleci/build/github/bndw/len.to.svg?style=flat-square">
-          </a>
+          <ul>
+            <li><a target="_blank" href="https://github.com/bndw/len.to">Source code</a></li>
+            <li><a target="_blank" href="https://circleci.com/gh/bndw/len.to">Latest build</a></li>
+            <li>Hugo version {{ hugo.Version }}</li>
+            <li>Last updated {{ .Site.LastChange }}</li>
+          </ul>
+          <p>© 2015-{{ now.Format "2006"}} <a target="_blank" href="https://bdw.to">Ben Woodward</a></p>
         </div>
       </div>
 
