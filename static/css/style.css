@@ -17,6 +17,7 @@ img {
 }
 
 li {
+  list-style-type: initial;
   margin-bottom: 0;
 }
 
