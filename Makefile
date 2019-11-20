@@ -1,30 +1,23 @@
 # NOTE: deploy.ci depends on the following environment variables:
 # - CI_HOST
 # - PORT
-TAG=bndw/len.to
+REPO=bndw/len.to
+CIRCLE_SHA1 ?= $(shell git rev-parse --short HEAD)
 ARTIFACT=len.to.tgz
 HOST=alaska
 DEPLOY_SCRIPT=deploy_lento
 
 all: dev
 
-.PHONY: clean
-clean:
-	rm -rf .build || true
-	mkdir -p .build
-
 .PHONY: build
-build: clean
-	hugo
-	cp -R root/* .build/
-	cp -R public/* .build/var/www/len.to/
+build:
+	@docker build -t $(REPO):latest .
 
-.PHONY: deploy 
-deploy: build
-	tar -czf $(ARTIFACT) public
-	scp $(ARTIFACT) $(HOST):~/
-	ssh $(HOST) ./$(DEPLOY_SCRIPT)
-	rm $(ARTIFACT)
+publish:
+	@docker login -u $(DOCKER_USER) -p $(DOCKER_PASS)
+	@docker push $(REPO):latest
+	@docker tag $(REPO):latest $(REPO):$(CIRCLE_SHA1)
+	@docker push $(REPO):$(CIRCLE_SHA1)
 
 .PHONY: deploy.ci
 deploy.ci:

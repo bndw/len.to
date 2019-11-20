@@ -2,14 +2,17 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:buster
+      - image: circleci/golang:1.13-buster
     steps:
       - checkout
-      - run: apt-get update && apt-get install build-essential curl openssh-client -y
-      - run: curl -L https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz | tar xvz -- && mv ./hugo /usr/local/bin
+      - setup_remote_docker
+      - run: sudo apt-get update && sudo apt-get install build-essential curl openssh-client -y
+      - run: curl -L https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz | tar xvz -- && sudo mv ./hugo /usr/local/bin
       - add_ssh_keys:
           fingerprints:
             - "6e:66:1e:13:b2:d4:e6:a0:d2:21:75:48:52:3a:ee:51"
+      - run: make build
+      - run: make publish
       - run: make deploy.ci
 
 workflows:
