@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y curl
 
 # Install hugo
 WORKDIR /tmp
-RUN curl -SL https://github.com/gohugoio/hugo/releases/download/v0.59.1/hugo_extended_0.59.1_Linux-64bit.tar.gz \
+RUN curl -SL https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz \
 	| tar xz \
 	&& mv hugo /usr/bin \
 	&& hugo version
