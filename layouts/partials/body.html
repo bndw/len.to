@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  {{ $paginator := .Paginate (where .Data.Pages "Type" "in" "posts") 1}}
+  {{ $paginator := .Paginate (where .Data.Pages "Type" "in" "post") 1}}
   {{ range (.Paginator).Pages }}
     <div class="row">
 
