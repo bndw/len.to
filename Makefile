@@ -49,7 +49,7 @@ deploy.k8s:
 	@mv tmp.yaml "_gitopsrepo/$(GITOPS_DEPLOYMENT)"
 	@git config --global user.email "circleci@bdw.to"
 	@git config --global user.name "CircleCI"
-	@cd _gitopsrepo && git add . && git commit -m "Update $(TAG_COMMIT)" && git push
+	@cd _gitopsrepo && git add . && git commit -m "Deploy $(TAG_COMMIT)" && git push
 
 .PHONY: dev
 dev:
