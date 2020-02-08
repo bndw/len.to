@@ -33,6 +33,7 @@ publish:
 .PHONY: deploy.ci
 deploy.ci:
 	@hugo
+	@cp robots.txt public/
 	@tar -czf $(ARTIFACT) public
 	@scp -o "StrictHostKeyChecking=no" -P $(PORT) $(ARTIFACT) $(CI_HOST):~/ > /dev/null 2>&1
 	@ssh -o "StrictHostKeyChecking=no" -p $(PORT) $(CI_HOST) ./$(DEPLOY_SCRIPT)
