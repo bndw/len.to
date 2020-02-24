@@ -1,6 +1,6 @@
 REPO ?= bndw/len.to
-CIRCLE_SHA1 ?= $(shell git rev-parse --short HEAD)
-TAG_COMMIT=$(REPO):$(CIRCLE_SHA1)
+GITSHA=$(shell git rev-parse --short HEAD)
+TAG_COMMIT=$(REPO):$(GITSHA)
 TAG_LATEST=$(REPO):latest
 
 all: dev
