@@ -53,6 +53,11 @@ footer {
 .left-side {
 }
 
+.left-side li {
+  list-style-type: none;
+  padding-bottom: .3em;
+}
+
 .hidden {
   display: none;
 }
@@ -94,6 +99,27 @@ ul.tag-posts > li.long {
   margin-bottom: 2.5em;
 }
 
+/* archive */
+.archive {
+	font-size: 0.8em;
+  margin-bottom: 2em;
+}
+
+.archive .year {
+  margin-bottom: 0;
+}
+
+.archive .row {
+  border-bottom: solid 1px #eee;
+  padding: 0em;
+}
+
+.archive .row .post-tags {
+  padding: 0;
+  padding-left: 2em;
+}
+/* end archive */
+
 .right-side {
   font-size: 1.2em;
 }
@@ -114,4 +140,8 @@ ul.tag-posts > li.long {
 	ul.tags {
 		display: initial;
 	}
+
+  .archive .row {
+    padding: 1em;
+  }
 }
