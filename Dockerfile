@@ -19,3 +19,4 @@ RUN hugo
 FROM nginx:stable-alpine
 
 COPY --from=build /build/public /usr/share/nginx/html
+COPY --from=build /build/robots.txt /usr/share/nginx/html/robots.txt
