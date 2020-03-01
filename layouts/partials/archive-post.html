@@ -1,0 +1,20 @@
+  <a href="{{ .Permalink }}">
+    <div class="row">
+
+      <div class="three columns left-side">
+        <div class="date">{{ .Date.Format "January 02, 2006" }}</div>
+      </div>
+
+      <div class="nine columns right-side post-tags">
+        <div class="post-tags">
+          {{ if .Params.Tags }}
+            {{ range $key, $tag := .Params.Tags }}
+              {{- if ne $key 0 }}, {{ end }}
+              <span>{{ $tag | lower }}</span>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+  </a>

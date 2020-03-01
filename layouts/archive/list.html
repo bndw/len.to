@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    {{ partial "header.html" . }}
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="three columns title">
+          <span>
+            <a id="home" href="/">len.to</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns left-side">
+          <a href="/">home</a>
+        </div>
+        <div class="nine columns right-side">
+          {{ $.Scratch.Set "count" 1 }}
+
+            {{ range (.Site.RegularPages.GroupByDate "2006") }}
+              {{ if (gt .Key 2000) }}
+
+                {{ range (where .Pages "Type" "post") }}
+                  {{ if (eq ($.Scratch.Get "count") 1) }}
+                    {{ $.Scratch.Set "count" 0 }}
+                    <div class="year">{{ .Date.Format "2006" }}</div>
+                  {{ end }}
+                {{ end }}
+
+                {{ $.Scratch.Set "count" 1 }}
+                <div class="archive">
+                {{ range (where .Pages "Type" "post") }}
+                  {{ partial "archive-post" . }}
+                {{ end }}
+                </div>
+            {{ end }}
+
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+
+    {{ partial "footer.html" . }}
+  </body>
+</html>
+
+
