@@ -6,6 +6,7 @@ html, body {
 
 a {
   color: #404040;
+  text-decoration: none;
 }
 
 img {
@@ -76,6 +77,7 @@ footer {
 }
 
 .post-tags{
+  display: none;
 	font-size: 0.8em;
 	padding: 1em 0em;
 }
@@ -125,8 +127,10 @@ ul.tag-posts > li.long {
 }
 
 .pagination {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  display: block;
+  font-size: 0.8em;
+  padding: 1em 0em;
+  margin-bottom: 3em;
 }
 
 .pagination-item {
@@ -143,5 +147,12 @@ ul.tag-posts > li.long {
 
   .archive .row {
     padding: 1em;
+  }
+
+  .pagination {
+    display: inline-block;
+  }
+  .post-tags {
+    display: inline-block;
   }
 }
