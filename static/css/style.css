@@ -95,6 +95,7 @@ ul.tags div {
 }
 
 ul.tag-posts > li.short {
+  list-style-type: none;
 }
 ul.tag-posts > li.long {
   list-style-type: none;

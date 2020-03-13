@@ -26,10 +26,8 @@
           <ul class="tag-posts">
             {{ range .Data.Pages }}
 
-            <li class="short hidden">
-              <a class="permalink" href="{{ .RelPermalink }}">
-                <span>{{ dateFormat "Jan 2, 2006" .Date }} &nbsp; {{ .Params.Location }}</span>
-              </a>
+            <li class="short hidden archive">
+              {{ partial "archive-post" . }}
             </li>
 
             <li class="long">
