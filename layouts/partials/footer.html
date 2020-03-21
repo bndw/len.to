@@ -46,6 +46,7 @@
       // up
       case 38:
         break;
+
       // down
       case 40:
         break;
@@ -58,6 +59,18 @@
       case 72:
         // h
         window.location = '/';
+        break;
+
+      case 74:
+        // j
+        window.scrollBy(0,50);
+        e.preventDefault();
+        break;
+
+      case 75:
+        // k
+        window.scrollBy(0,-50);
+        e.preventDefault();
         break;
 
       case 82:
