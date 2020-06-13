@@ -6,8 +6,6 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: sudo apt-get update && sudo apt-get install build-essential curl openssh-client -y
-      - run: curl -L https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz | tar xvz -- && sudo mv ./hugo /usr/local/bin
       - run: make build
       - run: make publish
 
