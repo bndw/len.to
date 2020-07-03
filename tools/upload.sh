@@ -21,14 +21,17 @@ fi
 bucket=ginput
 filepath=$1
 filename=$(basename "$1")
-url="https://d17enza3bfujl8.cloudfront.net/${filename}"
+extension="${filename##*.}"
+
+new_filename="$(uuidgen | tr  [:upper:] [:lower:]).${extension}"
+url="https://d17enza3bfujl8.cloudfront.net/${new_filename}"
 
 # Strip all metadata from the image
 exiftool -all= $1
 
 # Upload the image
-aws s3 cp --acl public-read "${filepath}" "s3://${bucket}/${filename}"
+aws s3 cp --acl public-read "${filepath}" "s3://${bucket}/${new_filename}"
 
 # Copy the URL to the clipboard
-echo "${url}" | pbcopy
+printf "${url}" | pbcopy
 echo "Image url copied to clipboard"
