@@ -123,6 +123,15 @@ ul.tag-posts > li.long {
 }
 /* end archive */
 
+/* about */
+.about li {
+  list-style-type: none;
+}
+.about .outbound a {
+  text-decoration: underline;
+}
+/* end about */
+
 .right-side {
   font-size: 1.2em;
 }

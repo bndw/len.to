@@ -5,7 +5,7 @@
   </head>
   <body>
 
-    <div class="container">
+    <div class="container about">
 
       <div class="row">
         <div class="three columns title">
@@ -25,13 +25,13 @@
           <p>len.to is a photo blog.</p>
           <br>
 
-          <ul>
-            <li><a target="_blank" href="https://github.com/bndw/len.to">Source code</a></li>
-            <li><a target="_blank" href="https://circleci.com/gh/bndw/len.to">Latest build</a></li>
+          <ul class="outbound">
+            <li><a href="https://github.com/bndw/len.to">Source code</a></li>
+            <li><a href="https://circleci.com/gh/bndw/len.to">Latest build</a></li>
             <li>Hugo version {{ hugo.Version }}</li>
             <li>Last updated {{ .Site.LastChange }}</li>
           </ul>
-          <p>© 2015-{{ now.Format "2006"}} <a target="_blank" href="https://bdw.to">Ben Woodward</a></p>
+          <p class="outbound">© 2015-{{ now.Format "2006"}} <a href="https://bdw.to">Ben Woodward</a></p>
         </div>
       </div>
 
