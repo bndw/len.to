@@ -5,7 +5,6 @@ draft: false
 location: ""
 tags:
 - foo
-- bar
 ---
 
 ![]()
