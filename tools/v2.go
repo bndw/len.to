@@ -38,12 +38,19 @@ func main() {
 			return err
 		}
 
-		createContentImgForEachURLInPost(p)
+		//createContentImgForEachURLInPost(p)
+		removeTagsFromEachPost(p)
 		return nil
 	})
 	if err != nil {
 		fmt.Printf("err: %s\n", err)
 	}
+}
+
+// removeTagsFromEachPost deletes the tags taxonomy from each post
+func removeTagsFromEachPost(p *Post) {
+	p.Tags = []string{}
+	p.Write(p.Path)
 }
 
 // createContentImgForEachURLInPost creates a new file in ./content/img/ for
