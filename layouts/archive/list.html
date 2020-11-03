@@ -27,7 +27,7 @@
             {{ range (.Site.RegularPages.GroupByDate "2006") }}
               {{ if (gt .Key 2000) }}
 
-                {{ range (where .Pages "Type" "post") }}
+                {{ range (where .Pages "Type" "img") }}
                   {{ if (eq ($.Scratch.Get "count") 1) }}
                     {{ $.Scratch.Set "count" 0 }}
                     <div class="year">{{ .Date.Format "2006" }}</div>
@@ -36,7 +36,7 @@
 
                 {{ $.Scratch.Set "count" 1 }}
                 <div class="archive">
-                {{ range (where .Pages "Type" "post") }}
+                {{ range (where .Pages "Type" "img") }}
                   {{ partial "archive-post" . }}
                 {{ end }}
                 </div>
