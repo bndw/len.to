@@ -77,13 +77,11 @@ footer {
 }
 
 .post-tags{
-  display: none;
 	font-size: 0.8em;
 	padding: 1em 0em;
 }
 
 ul.tags {
-	display: none;
   margin-top: 1.8em;
 }
 ul.tags li{
