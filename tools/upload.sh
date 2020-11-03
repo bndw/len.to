@@ -23,7 +23,9 @@ filepath=$1
 filename=$(basename "$1")
 extension="${filename##*.}"
 
-new_filename="$(uuidgen | tr  [:upper:] [:lower:]).${extension}"
+id=$(uuidgen | tr [:upper:] [:lower:])
+new_filename="${id}.${extension}"
+
 url="https://d17enza3bfujl8.cloudfront.net/${new_filename}"
 
 # Strip all metadata from the image
@@ -34,4 +36,10 @@ aws s3 cp --acl public-read "${filepath}" "s3://${bucket}/${new_filename}"
 
 # Copy the URL to the clipboard
 printf "${url}" | pbcopy
-echo "Image url copied to clipboard"
+
+# Create the content/img file
+hugo new "img/${id}.md"
+vi "content/img/${id}.md"
+
+# Copy the content/img file to the clipboard
+printf "[![](${url})](/img/${id})" | pbcopy

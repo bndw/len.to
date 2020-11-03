@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    {{ partial "header.html" . }}
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="three columns">
+          <a class="title" href="/">len.to</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns left-side">
+          <ul>
+            <li><a href="/about">about</a></li>
+            <li><a href="/archive">archive</a></li>
+            <li><a href="/random">random</a></li>
+          </ul>
+        </div>
+        <div class="nine columns right-side">
+          <a class="permalink post-title" href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
+          {{ .Content }}
+          {{ partial "post-tags.html" . }}
+        </div>
+      </div>
+
+    </div>
+    {{ partial "footer.html" . }}
+  </body>
+</html>
