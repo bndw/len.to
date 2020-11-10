@@ -8,5 +8,5 @@ tags: []
 ---
 
 
-![](https://d17enza3bfujl8.cloudfront.net/L1000418.jpg)
+[![](https://d17enza3bfujl8.cloudfront.net/L1000418.jpg)](/img/l1000418)
 
