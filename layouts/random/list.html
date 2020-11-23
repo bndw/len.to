@@ -1,4 +1,12 @@
 <script>
-var posts = [{{ range (where .Site.AllPages "Type" "in" "imgs") | shuffle }}{{ .Permalink }},{{ end }}];
-window.location = posts[Math.floor(Math.random()*posts.length)];
+var images = [{{ range (where .Site.AllPages "Type" "in" "imgs") | shuffle }}{{ .Permalink }},{{ end }}],
+    selected;
+
+// Sometimes []images ends up with an "undefined" element, resulting in
+// a redirect to /img. Make sure that doesn't happen.
+while (!selected) {
+  selected = images[Math.floor(Math.random()*images.length)];
+}
+
+window.location = selected;
 </script>
