@@ -130,6 +130,31 @@ ul.tag-posts > li.long {
 }
 /* end about */
 
+/* galley */
+.gallery-header {
+  padding-left: 1.6em;
+}
+.gallery {
+  -webkit-column-count: 1;
+  -webkit-column-gap: 10px;
+  -moz-column-count: 1;
+  -moz-column-gap: 10px;
+  column-count: 1;
+  column-gap: 10px;
+}
+.gallery > img {
+  width: 100% !important;
+  height: auto !important;
+}
+.gallery-pagination {
+  display: block;
+  font-size: 1em;
+  padding-right: 2em;
+  margin-bottom: 3em;
+}
+
+/* end galley */
+
 .right-side {
   font-size: 1.2em;
 }
@@ -149,6 +174,11 @@ ul.tag-posts > li.long {
 }
 
 @media (min-width: 550px) {
+  .gallery {
+    -moz-column-count:    4;
+    -webkit-column-count: 4;
+    column-count:         4;
+  }
 	ul.tags {
 		display: initial;
 	}
