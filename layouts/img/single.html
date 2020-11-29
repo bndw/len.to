@@ -15,19 +15,46 @@
       <div class="row">
         <div class="three columns left-side">
           <ul>
-            <li><a href="/about">about</a></li>
-            <li><a href="/archive">archive</a></li>
-            <li><a href="/random">random</a></li>
+            {{ range first 10 (sort site.Taxonomies.tags "value" "desc")}}
+            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
+            {{ end }}
+            <li><a id="show-more" href="#">+ show all</li>
+            {{ range after 10 (sort site.Taxonomies.tags "value" "desc")}}
+            <li class="hidden tag"><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
+            {{ end }}
           </ul>
         </div>
         <div class="nine columns right-side">
-          <a class="permalink post-title" href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
           {{ .Content }}
-          {{ partial "post-tags.html" . }}
+          <div class="row post-tags">
+            <a href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a> in <a href="/tags/{{ .Params.Location | lower | urlize }}">{{ .Params.Location }}</a>
+          </div>
+          <div class="row post-tags">
+              {{ if .Params.Tags }}
+                {{ range $key, $tag := .Params.Tags }}
+                  {{- if ne $key 0 }}, {{ end }}<a href='/tags/{{ $tag | urlize }}'>#{{ $tag | lower }}</a>
+                {{ end }}
+              {{ end }}
+          </div>
+
         </div>
       </div>
-
-    </div>
     {{ partial "footer.html" . }}
+
+    <script>
+      (function() {
+        window.onload = function () {
+          document.getElementById('show-more').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle("hidden");
+
+            var hiddenTags = document.querySelectorAll(".tag");
+            for (var i=0; i < hiddenTags.length; i++) {
+              hiddenTags[i].classList.toggle("hidden");
+            }
+          });
+        }
+      })()
+    </script>
   </body>
 </html>

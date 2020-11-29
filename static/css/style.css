@@ -4,6 +4,16 @@ html, body {
   font-size: 10pt;
 }
 
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.column, .columns {
+  margin-left: initial;
+}
+
 a {
   color: #404040;
   text-decoration: none;
@@ -38,10 +48,6 @@ footer {
   margin-top: 1em;
 }
 
-.container {
-  padding-left: 1.6em;
-  margin: 0;
-}
 
 .title {
   display: block;
@@ -76,9 +82,9 @@ footer {
 	margin-bottom: 1em;
 }
 
-.post-tags{
+.post-tags {
 	font-size: 0.8em;
-	padding: 1em 0em;
+  line-height: 1.6;
 }
 
 ul.tags {
@@ -170,10 +176,10 @@ ul.tag-posts > li.long {
   padding-left: 0.8em;
 }
 
-.permalink {
-}
-
 @media (min-width: 550px) {
+  .container {
+    padding-left: 1.6em;
+  }
   .gallery {
     -moz-column-count:    4;
     -webkit-column-count: 4;
@@ -188,9 +194,6 @@ ul.tag-posts > li.long {
   }
 
   .pagination {
-    display: inline-block;
-  }
-  .post-tags {
     display: inline-block;
   }
 }

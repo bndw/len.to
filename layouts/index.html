@@ -4,7 +4,61 @@
     {{ partial "header.html" . }}
   </head>
   <body>
-    {{ partial "body.html" . }}
+    <div class="container">
+
+      <div class="row">
+        <div class="three columns">
+          <a class="title" href="/">len.to</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns left-side">
+          <ul>
+            {{ range first 10 (sort site.Taxonomies.tags "value" "desc")}}
+            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
+            {{ end }}
+            <li><a id="show-more" href="#">+ show all</li>
+            {{ range after 10 (sort site.Taxonomies.tags "value" "desc")}}
+            <li class="hidden tag"><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="nine columns right-side">
+
+          {{ $paginator := .Paginate (where .Data.Pages "Type" "in" "img") 25}}
+
+          {{ partial "gallery.html" $paginator.Pages }}
+
+          <div class="gallery-pagination u-pull-right">
+            {{ if $paginator.HasNext }}
+              {{ if $paginator.HasPrev }}
+                <a id="pagination-prev" class="pagination-item" href="{{ $paginator.Prev.URL }}">back</a>
+              {{ end }}
+              <a id="pagination-next" class="pagination-item" href="{{ $paginator.Next.URL }}">next</a>
+            {{ else }}
+              fin
+            {{ end }}
+          </div>
+
+        </div>
+      </div>
     {{ partial "footer.html" . }}
+
+    <script>
+      (function() {
+        window.onload = function () {
+          document.getElementById('show-more').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle("hidden");
+
+            var hiddenTags = document.querySelectorAll(".tag");
+            for (var i=0; i < hiddenTags.length; i++) {
+              hiddenTags[i].classList.toggle("hidden");
+            }
+          });
+        }
+      })()
+    </script>
   </body>
 </html>

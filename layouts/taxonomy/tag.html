@@ -4,18 +4,46 @@
     {{ partial "header.html" . }}
   </head>
   <body>
-    <div class="row gallery-header">
-      <div class="three columns title">
-        <span><a id="home" href="/">len.to</a></span>
-      </div>
-    </div>
-    <div class="row">
-      <p><a href="/">~/</a> <a href="/tags">tags</a> / <a id="term" href="/tags/{{ .Data.Term | urlize}}">{{ .Data.Term | lower }}</a></p>
-    </div>
-    <div class="row">
-      {{ partial "gallery.html" .Data.Pages }}
-    </div>
+    <div class="container">
 
+      <div class="row">
+        <div class="three columns">
+          <a class="title" href="/">len.to</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns left-side">
+          <ul>
+            {{ range first 10 (sort site.Taxonomies.tags "value" "desc")}}
+            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
+            {{ end }}
+            <li><a id="show-more" href="#">+ show all</li>
+            {{ range after 10 (sort site.Taxonomies.tags "value" "desc")}}
+            <li class="hidden tag"><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="nine columns right-side">
+          {{ partial "gallery.html" .Data.Pages }}
+        </div>
+      </div>
     {{ partial "footer.html" . }}
+
+    <script>
+      (function() {
+        window.onload = function () {
+          document.getElementById('show-more').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle("hidden");
+
+            var hiddenTags = document.querySelectorAll(".tag");
+            for (var i=0; i < hiddenTags.length; i++) {
+              hiddenTags[i].classList.toggle("hidden");
+            }
+          });
+        }
+      })()
+    </script>
   </body>
 </html>
