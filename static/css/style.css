@@ -76,12 +76,6 @@ footer {
   text-decoration: underline;
 }
 
-.post-title {
-	display: inline-block;
-	font-size: 1em;
-	margin-bottom: 1em;
-}
-
 .post-tags {
 	font-size: 0.8em;
   line-height: 1.6;
@@ -180,11 +174,20 @@ ul.tag-posts > li.long {
   .container {
     padding-left: 1.6em;
   }
+
   .gallery {
     -moz-column-count:    4;
     -webkit-column-count: 4;
     column-count:         4;
   }
+
+  .desktop-tag-list {
+    display: block;
+  }
+  .tag-list {
+    display: none;
+  }
+
 	ul.tags {
 		display: initial;
 	}
