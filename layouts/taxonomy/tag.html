@@ -4,115 +4,17 @@
     {{ partial "header.html" . }}
   </head>
   <body>
-
-    <div class="container">
-
-      <div class="row">
-        <div class="three columns">
-          <a class="title" href="/">len.to</a>
-        </div>
+    <div class="row gallery-header">
+      <div class="three columns title">
+        <span><a id="home" href="/">len.to</a></span>
       </div>
-
-      <div class="row">
-        <div class="three columns left-side">
-          <div>
-            <a href="/">~/</a> <a href="/tags">tags</a> / <a id="term" href="/tags/{{ .Data.Term | urlize}}">{{ .Data.Term | lower }}</a>
-          </div>
-
-        </div>
-        <div class="nine columns right-side">
-          <div id="toggle-btn">view list</div>
-
-          <ul class="tag-posts">
-            {{ range .Data.Pages }}
-
-            <li class="short hidden archive">
-              {{ partial "archive-post" . }}
-            </li>
-
-            <li class="long">
-              <div class="content">
-                <a class="permalink" href="{{ .RelPermalink }}">
-                  <span>{{ dateFormat "Jan 2, 2006" .Date }} &nbsp; {{ .Params.Location }}</span>
-                </a>
-                {{ .Content }}
-              </div>
-              <div class="content-images">
-              </div>
-            </li>
-
-            {{ end }}
-          </ul>
-
-        </div>
-      </div>
-
     </div>
-
-    <script>
-    (function(){
-      // toggle the layout between image only (default) and full content.
-      document.getElementById("toggle-btn").addEventListener("click", function() {
-        var hide = function(elements) {
-          for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.add("hidden");
-          }
-          return true;
-        };
-
-        var show = function(elements) {
-          for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("hidden");
-          };
-          return true;
-        };
-
-        var btn            = this,
-            long           = document.getElementsByClassName("long"),
-            short          = document.getElementsByClassName("short"),
-            missingContent = (long.length < 1 || short.length < 1),
-            shortIsVisible = !missingContent && long[0].classList.contains("hidden");
-
-        if (missingContent) return;
-
-        if (shortIsVisible) {
-          hide(short) && show(long) && (btn.innerHTML = "view list");
-        } else {
-          hide(long) && show(short) && (btn.innerHTML = "view images");
-        }
-      });
-
-
-      var content        = document.getElementsByClassName("content"),
-          imageContainer = document.getElementsByClassName('content-images')[0],
-          term           = document.getElementById("term").innerHTML;
-
-      // If the current tag is quotes then exit early.
-      if (term === "quotes") return;
-
-      for (var i = 0; i < content.length; i++) {
-        var post      = content[i],
-            permalink = post.getElementsByClassName("permalink")[0],
-            images    = post.getElementsByTagName("img");
-
-        // Hide the original post
-        content[i].classList.add("hidden");
-
-        // Strip everything from the permalink
-        while (permalink.firstChild) {
-          permalink.removeChild(permalink.firstChild);
-        }
-
-        // Wrap all images in the permalink
-        for (var x = 0; x < images.length; x++) {
-          permalink.appendChild(images[x])
-        }
-
-        imageContainer.appendChild(permalink);
-      }
-
-    })()
-    </script>
+    <div class="row">
+      <p><a href="/">~/</a> <a href="/tags">tags</a> / <a id="term" href="/tags/{{ .Data.Term | urlize}}">{{ .Data.Term | lower }}</a></p>
+    </div>
+    <div class="row">
+      {{ partial "gallery.html" .Data.Pages }}
+    </div>
 
     {{ partial "footer.html" . }}
   </body>
