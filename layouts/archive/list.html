@@ -37,7 +37,28 @@
                 {{ $.Scratch.Set "count" 1 }}
                 <div class="archive">
                 {{ range (where .Pages "Type" "img") }}
-                  {{ partial "archive-post" . }}
+                  <div class="row">
+
+                    <a href="{{ .Permalink }}">
+                      <div class="three columns left-side">
+                        <div class="date">{{ .Date.Format "January 02, 2006" }}</div>
+                      </div>
+                    </a>
+
+                    <div class="nine columns right-side post-tags">
+                      <div class="post-tags">
+                        {{ if .Params.Tags }}
+                          {{ range $key, $tag := .Params.Tags }}
+                            {{- if ne $key 0 }}, {{ end }}
+                            <a href="/tags/{{ $tag | urlize }}">
+                              <span>{{ $tag | lower }}</span>
+                            </a>
+                          {{ end }}
+                        {{ end }}
+                      </div>
+                    </div>
+
+                  </div>
                 {{ end }}
                 </div>
             {{ end }}

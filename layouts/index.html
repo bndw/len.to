@@ -4,7 +4,37 @@
     {{ partial "header.html" . }}
   </head>
   <body>
-    {{ partial "body.html" . }}
+    <div class="container">
+
+      <div class="row">
+        <div class="three columns">
+          <a class="title" href="/">len.to</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns left-side">
+          {{ partial "tag-list.html"}}
+        </div>
+        <div class="nine columns right-side">
+
+          {{ $paginator := .Paginate (where .Data.Pages "Type" "in" "img") 25}}
+
+          {{ partial "gallery.html" $paginator.Pages }}
+
+          <div class="gallery-pagination u-pull-right">
+            {{ if $paginator.HasNext }}
+              {{ if $paginator.HasPrev }}
+                <a id="pagination-prev" class="pagination-item" href="{{ $paginator.Prev.URL }}">back</a>
+              {{ end }}
+              <a id="pagination-next" class="pagination-item" href="{{ $paginator.Next.URL }}">next</a>
+            {{ else }}
+              fin
+            {{ end }}
+          </div>
+
+        </div>
+      </div>
     {{ partial "footer.html" . }}
   </body>
 </html>

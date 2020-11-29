@@ -25,118 +25,63 @@
 
   document.addEventListener("keydown", function(e) {
     switch(e.which) {
-      case 32:
-        // space
+      case 32: // space
         paginator.next();
         e.preventDefault();
         break;
 
-      case 37:
-        // left
+      case 37: // left
         paginator.prev();
         e.preventDefault();
         break;
 
-      case 39:
-        // right
+      case 39: // right
         paginator.next();
         e.preventDefault();
         break;
 
-      // up
-      case 38:
+      case 38: // up
         break;
 
-      // down
-      case 40:
+      case 40: // down
         break;
 
-      case 65:
-        // a
+      case 65: // a
         window.location = '/archive';
         break;
 
-      case 72:
-        // h
+      case 72: // h
         window.location = '/';
         break;
 
-      case 74:
-        // j
+      case 74: // j
         window.scrollBy(0,50);
         e.preventDefault();
         break;
 
-      case 75:
-        // k
+      case 75: // k
         window.scrollBy(0,-50);
         e.preventDefault();
         break;
 
-      case 82:
-        // r
+      case 82: // r
         window.location = '/random';
         break;
 
-      case 84:
-        // t
+      case 84: // t
         window.location = '/tags';
         break;
     }
   }, false);
 
-  // swipe navigation
-  // http://javascriptkit.com/javatutors/touchevents2.shtml
-  var swipedetect = function(el, callback){
-      var touchsurface = el,
-      swipedir,
-      startX,
-      startY,
-      distX,
-      distY,
-      threshold = 150, //required min distance traveled to be considered swipe
-      restraint = 100, // maximum distance allowed at the same time in perpendicular direction
-      allowedTime = 300, // maximum time allowed to travel that distance
-      elapsedTime,
-      startTime,
-      handleswipe = callback || function(swipedir){}
-    
-      touchsurface.addEventListener('touchstart', function(e){
-          var touchobj = e.changedTouches[0]
-          swipedir = 'none'
-          dist = 0
-          startX = touchobj.pageX
-          startY = touchobj.pageY
-          startTime = new Date().getTime()
-      }, false)
-    
-      touchsurface.addEventListener('touchmove', function(e){
-          e.preventDefault() // prevent scrolling when inside DIV
-      }, false)
-    
-      touchsurface.addEventListener('touchend', function(e){
-          var touchobj = e.changedTouches[0]
-          distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-          distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-          elapsedTime = new Date().getTime() - startTime
-          if (elapsedTime <= allowedTime){ // first condition for a swipe met
-              if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
-                  swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
-              }
-              else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
-                  swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
-              }
-          }
-          handleswipe(swipedir)
-      }, false)
-  };
+  // Tag list: show more
+  document.getElementById("show-more").addEventListener("click", function(e) {
+    e.preventDefault();
+    this.classList.toggle("hidden");
 
-  swipedetect(document.body, function(swipedir){
-    if (swipedir == 'left') {
-      paginator.next();
-    }
-    if (swipedir == 'right') {
-      paginator.prev();
+    var hiddenTags = document.querySelectorAll(".tag");
+    for (var i=0; i < hiddenTags.length; i++) {
+      hiddenTags[i].classList.toggle("hidden");
     }
   });
 })()

@@ -14,20 +14,23 @@
 
       <div class="row">
         <div class="three columns left-side">
-          <ul>
-            <li><a href="/about">about</a></li>
-            <li><a href="/archive">archive</a></li>
-            <li><a href="/random">random</a></li>
-          </ul>
+          {{ partial "tag-list.html"}}
         </div>
         <div class="nine columns right-side">
-          <a class="permalink post-title" href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
           {{ .Content }}
-          {{ partial "post-tags.html" . }}
+          <div class="row post-tags">
+            <a href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a> in <a href="/tags/{{ .Params.Location | lower | urlize }}">{{ .Params.Location }}</a>
+          </div>
+          <div class="row post-tags">
+              {{ if .Params.Tags }}
+                {{ range $key, $tag := .Params.Tags }}
+                  {{- if ne $key 0 }}, {{ end }}<a href='/tags/{{ $tag | urlize }}'>#{{ $tag | lower }}</a>
+                {{ end }}
+              {{ end }}
+          </div>
+
         </div>
       </div>
-
-    </div>
     {{ partial "footer.html" . }}
   </body>
 </html>

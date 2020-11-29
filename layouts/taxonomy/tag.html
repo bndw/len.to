@@ -4,18 +4,22 @@
     {{ partial "header.html" . }}
   </head>
   <body>
-    <div class="row gallery-header">
-      <div class="three columns title">
-        <span><a id="home" href="/">len.to</a></span>
-      </div>
-    </div>
-    <div class="row">
-      <p><a href="/">~/</a> <a href="/tags">tags</a> / <a id="term" href="/tags/{{ .Data.Term | urlize}}">{{ .Data.Term | lower }}</a></p>
-    </div>
-    <div class="row">
-      {{ partial "gallery.html" .Data.Pages }}
-    </div>
+    <div class="container">
 
+      <div class="row">
+        <div class="three columns">
+          <a class="title" href="/">len.to</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns left-side">
+          {{ partial "tag-list.html" }}
+        </div>
+        <div class="nine columns right-side">
+          {{ partial "gallery.html" .Data.Pages }}
+        </div>
+      </div>
     {{ partial "footer.html" . }}
   </body>
 </html>
