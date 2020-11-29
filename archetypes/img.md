@@ -1,10 +1,12 @@
 ---
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
+title: {{ replace .TranslationBaseName "-" " " | title }}
 date: {{ .Date }}
 draft: false
-location: ""
+location: FIXME
+img_url: FIXME
 tags:
-- foo
+- FIXME
+
 ---
 
-![]()
+![](https://via.placeholder.com/150)
