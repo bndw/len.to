@@ -9,6 +9,10 @@ all: dev
 build:
 	@docker build -t $(TAG_LATEST) .
 
+.PHONY: run
+run:
+	@docker run --rm -p 8080:80 $(TAG_LATEST)
+
 .PHONY: publish
 publish:
 	@docker login -u $(DOCKER_USER) -p $(DOCKER_PASS)
