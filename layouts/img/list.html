@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
   <head>
     {{ partial "header.html" . }}
   </head>
@@ -10,15 +10,9 @@
       </div>
     </div>
     <div class="row">
-      <div class="gallery">
-        {{ $paginator := .Paginate (where .Data.Pages "Type" "in" "img") 24}}
-        {{ $.Scratch.Set "count" 0 }}
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "in" "img") 24}}
 
-        {{ range $paginator.Pages }}
-          <a href="{{ .Permalink }}"><img src={{ .Params.img_url }}></a>
-        {{ end }}
-
-      </div>
+      {{ partial "gallery.html" $paginator.Pages }}
 
       <div class="gallery-pagination u-pull-right">
         {{ if $paginator.HasNext }}
@@ -35,5 +29,3 @@
     {{ partial "footer.html" . }}
   </body>
 </html>
-
-
