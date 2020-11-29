@@ -21,21 +21,5 @@
         </div>
       </div>
     {{ partial "footer.html" . }}
-
-    <script>
-      (function() {
-        window.onload = function () {
-          document.getElementById('show-more').addEventListener('click', function(e) {
-            e.preventDefault();
-            this.classList.toggle("hidden");
-
-            var hiddenTags = document.querySelectorAll(".tag");
-            for (var i=0; i < hiddenTags.length; i++) {
-              hiddenTags[i].classList.toggle("hidden");
-            }
-          });
-        }
-      })()
-    </script>
   </body>
 </html>
