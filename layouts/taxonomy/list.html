@@ -13,13 +13,13 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="three columns left-side">
-          <div>
-            <a href="/">~/</a> <a href="/tags">tags</a>
-          </div>
+      <div class="row">
+        <div class="three columns left-side">
+          <ul>
+            <li><a href="/">home</a></li>
+          </ul>
         </div>
-				<div class="nine columns right-side">
+        <div class="nine columns right-side">
 					{{ if not (eq (len $.Site.Taxonomies.tags) 0) }}
 						{{ $fontUnit := "rem" }}
 						{{ $largestFontSize := 2.0 }}
@@ -43,8 +43,8 @@
 							{{ end }}
 						</div>
 					{{ end }}
-				</div>
-			</div>
+        </div>
+      </div>
 
 		</div>
 
