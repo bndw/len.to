@@ -1,7 +1,0 @@
-<div class="post-tags">
-	{{ if .Params.Tags }}
-		{{ range $key, $tag := .Params.Tags }}
-			{{- if ne $key 0 }}, {{ end }}<span><a href='/tags/{{ $tag | urlize }}'>{{ $tag | lower }}</a></span>
-		{{ end }}
-	{{ end }}
-</div>
