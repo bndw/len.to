@@ -23,7 +23,7 @@ filepath=$1
 filename=$(basename "$1")
 extension="${filename##*.}"
 
-id=$(uuidgen | tr [:upper:] [:lower:])
+id=$(uuidgen | tr [:upper:] [:lower:] | cut -d'-' -f 1)
 new_filename="${id}.${extension}"
 
 url="https://d17enza3bfujl8.cloudfront.net/${new_filename}"
