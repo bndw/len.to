@@ -17,9 +17,7 @@
 
       <div class="row">
         <div class="three columns left-side">
-          <ul>
-            <li><a href="/">home</a></li>
-          </ul>
+          &nbsp;
         </div>
         <div class="nine columns right-side">
           <p>len.to is a photo blog.</p>
@@ -28,6 +26,7 @@
           <ul class="outbound">
             <li><a href="https://github.com/bndw/len.to">Source code</a></li>
             <li><a href="https://circleci.com/gh/bndw/len.to">Latest build</a></li>
+            <li><span>{{ len (where .Site.RegularPages "Type" "in" "img") }}</span> total photos</li>
             <li>Hugo version {{ hugo.Version }}</li>
             <li>Last updated {{ .Site.LastChange }}</li>
           </ul>
