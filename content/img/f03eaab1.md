@@ -7,6 +7,7 @@ img_url: https://d17enza3bfujl8.cloudfront.net/f03eaab1.jpg
 tags:
 - Olympic Peninsula, WA
 - camping
+- cars
 
 ---
 
