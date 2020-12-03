@@ -39,4 +39,7 @@ printf "${url}" | pbcopy
 
 # Create the content/img file
 hugo new "img/${id}.md"
+sed -i "" "s,original_fn:,original_fn: ${filepath}," "content/img/${id}.md"
+sed -i "" "s,img_url:,img_url: ${url}," "content/img/${id}.md"
+
 vi "content/img/${id}.md"
