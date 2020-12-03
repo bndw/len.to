@@ -3,7 +3,8 @@ title: {{ replace .TranslationBaseName "-" " " | title }}
 date: {{ .Date }}
 draft: false
 location: FIXME
-img_url: FIXME
+original_fn:
+img_url: 
 tags:
 - FIXME
 
