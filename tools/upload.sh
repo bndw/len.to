@@ -40,6 +40,3 @@ printf "${url}" | pbcopy
 # Create the content/img file
 hugo new "img/${id}.md"
 vi "content/img/${id}.md"
-
-# Copy the content/img file to the clipboard
-printf "[![](${url})](/img/${id})" | pbcopy
