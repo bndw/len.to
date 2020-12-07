@@ -24,9 +24,17 @@
           <br>
 
           <ul class="outbound">
+            <li><span>{{ len (where .Site.RegularPages "Type" "in" "img") }}</span> photos</li>
+            <li><span>
+              {{ $currentTagCount := 0 }}
+              {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+                {{ $currentTagCount = (add $currentTagCount (len $taxonomy.Pages)) }}
+              {{ end }}
+              {{ $currentTagCount }}
+              </span> tags
+            </li>
             <li><a href="https://github.com/bndw/len.to">Source code</a></li>
             <li><a href="https://circleci.com/gh/bndw/len.to">Latest build</a></li>
-            <li><span>{{ len (where .Site.RegularPages "Type" "in" "img") }}</span> total photos</li>
             <li>Hugo version {{ hugo.Version }}</li>
             <li>Last updated {{ .Site.LastChange }}</li>
           </ul>
