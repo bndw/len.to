@@ -14,15 +14,8 @@
 
       <div class="row">
         <div class="three columns left-side">
-          <ul>
-            {{ range first 10 (sort site.Taxonomies.tags "value" "desc")}}
-            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
-            {{ end }}
-            <li><a id="show-more" href="#">+ show all</li>
-            {{ range after 10 (sort site.Taxonomies.tags "value" "desc")}}
-            <li class="hidden tag"><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
-            {{ end }}
-          </ul>
+          {{ partial "nav.html"}}
+          {{ partial "tag-list.html"}}
         </div>
         <div class="nine columns right-side">
 
