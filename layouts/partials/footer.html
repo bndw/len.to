@@ -22,14 +22,9 @@
     }
   };
 
-
   document.addEventListener("keydown", function(e) {
-    switch(e.which) {
-      case 32: // space
-        paginator.next();
-        e.preventDefault();
-        break;
 
+    switch(e.which) {
       case 37: // left
         paginator.prev();
         e.preventDefault();
@@ -46,31 +41,6 @@
       case 40: // down
         break;
 
-      case 65: // a
-        window.location = '/archive';
-        break;
-
-      case 72: // h
-        window.location = '/';
-        break;
-
-      case 74: // j
-        window.scrollBy(0,50);
-        e.preventDefault();
-        break;
-
-      case 75: // k
-        window.scrollBy(0,-50);
-        e.preventDefault();
-        break;
-
-      case 82: // r
-        window.location = '/random';
-        break;
-
-      case 84: // t
-        window.location = '/tags';
-        break;
     }
   }, false);
 

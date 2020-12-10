@@ -100,6 +100,26 @@ ul.tag-posts > li.long {
   margin-bottom: 2.5em;
 }
 
+#search {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 95%;
+  padding-right: 2em;
+  font-size: 4em;
+  text-align: right;
+  background: #fff;
+  opacity: 0.9;
+}
+
+#search > div:first-child {
+  border-bottom: solid 1px #666;
+}
+
+.highlight {
+  background: #666;
+}
+
 /* archive */
 .archive {
 	font-size: 0.8em;
