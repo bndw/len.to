@@ -1,7 +1,7 @@
 <script>
 (function(){
-  var tags = [{{ range $name, $taxonomy := . }}{{ $name }},{{ end }}];
-  var search = {
+  let tags = [{{ range $name, $taxonomy := . }}{{ $name }},{{ end }}];
+  let search = {
     enabled: false,
     accuracy: 0.8,
     val: "",
@@ -17,7 +17,6 @@
       this.el.innerHTML = "";
       this.el.classList.add("hidden");
     },
-
     append: function(s) {
       this.val += s.toLowerCase();
     },
@@ -28,18 +27,15 @@
       this.val = this.val.slice(0, -1);
     },
     setResults: function() {
-      var val = this.val;
-      var html = "";
-      tags.filter(function(tag) {
-        return fuzzy(tag, val, this.accuracy)
-      }).forEach(function(tag) {
-        // wrap each matching letter in the tag in a span
-        var displayTag = "";
-        for (var t=0; t < tag.length; t++) {
-          var tagLetter = tag[t];
-          var match = false;
-          for (var v=0; v < val.length; v++) {
-            var queryLetter = val[v];
+      let html = "";
+      tags.filter((tag) => fuzzy(tag, this.val, this.accuracy)).forEach((tag) => {
+        // Wrap each matching tag letter in a span
+        let displayTag = "";
+        for (let t=0; t < tag.length; t++) {
+          let tagLetter = tag[t],
+              match = false;
+          for (let v=0; v < this.val.length; v++) {
+            let queryLetter = this.val[v];
             if (tagLetter === queryLetter) {
               match = true;
             }
@@ -56,27 +52,23 @@
     },
 
     bestMatch: function() {
-      var val = this.val;
-      var results = tags.filter(function(tag) {
-        return fuzzy(tag, val, this.accuracy)
-      });
-
-      return results.length ? results[0] : undefined;
+      let matches = tags.filter((tag) => fuzzy(tag, this.val, this.accuracy));
+      return matches.length ? matches[0] : undefined;
     }
   }
 
   function fuzzy(string, term, ratio) {
-      var string = string.toLowerCase();
-      var compare = term.toLowerCase();
-      var matches = 0;
-      if (string.indexOf(compare) > -1) return true; // covers basic partial matches
-      for (var i = 0; i < compare.length; i++) {
-              string.indexOf(compare[i]) > -1 ? matches += 1 : matches -=1;
-          }
-          return (matches/string.length >= ratio || term == "")
+    let string = string.toLowerCase();
+    let compare = term.toLowerCase();
+    let matches = 0;
+    if (string.indexOf(compare) > -1) return true; // covers basic partial matches
+    for (let i = 0; i < compare.length; i++) {
+      string.indexOf(compare[i]) > -1 ? matches += 1 : matches -=1;
+    }
+    return (matches/string.length >= ratio || term == "")
   }
 
-  document.addEventListener("keydown", function(e) {
+  document.addEventListener("keydown", (e) => {
     switch(e.which) {
       case 8: // backspace
         e.preventDefault();
@@ -106,9 +98,9 @@
           return;
         }
 
-        var dest = search.bestMatch();
-        if (dest) {
-          window.location = "/tags/" + dest;
+        let match = search.bestMatch();
+        if (match) {
+          window.location = "/tags/" + match;
         }
         break;
 
