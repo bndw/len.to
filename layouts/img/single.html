@@ -18,7 +18,7 @@
           {{ partial "tag-list.html"}}
         </div>
         <div class="nine columns right-side">
-          {{ .Content }}
+          <img src={{ .Params.img_url }}>
           <div class="row post-tags">
             <a href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a> in <a href="/tags/{{ .Params.Location | lower | urlize }}">{{ .Params.Location }}</a>
           </div>
