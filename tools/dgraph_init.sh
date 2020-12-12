@@ -7,7 +7,7 @@ IMG_RDF=dgraph_imgs.rdf
 SCHEMA_RDF=dgraph_schema.rdf
 
 go run dgraph_schema.go > $SCHEMA_RDF
-go run dgraph_export_images.go > $IMG_RDF
+go run dgraph_export_images.go pkg.go > $IMG_RDF
 
 # drop existing data and schema
 curl -X POST "${DGRAPH}/alter" -d '{"drop_all": true}'
