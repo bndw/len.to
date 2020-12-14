@@ -58,7 +58,7 @@
   }
 
   function fuzzy(string, term, ratio) {
-    let string = string.toLowerCase();
+    string = string.toLowerCase();
     let compare = term.toLowerCase();
     let matches = 0;
     if (string.indexOf(compare) > -1) return true; // covers basic partial matches
