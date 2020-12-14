@@ -9,6 +9,7 @@
       <div class="row">
         <div class="three columns">
           <a class="title" href="/">len.to</a>
+          <div id="search"></div>
         </div>
       </div>
 
@@ -33,5 +34,6 @@
         </div>
       </div>
     {{ partial "footer.html" . }}
+    {{ partial "search.html" $.Site.Taxonomies.tags }}
   </body>
 </html>
