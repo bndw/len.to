@@ -21,9 +21,6 @@
           {{ partial "tag-list.html"}}
         </div>
         <div class="nine columns right-side">
-          <p>len.to is a photo blog.</p>
-          <br>
-
           <ul class="outbound">
             <li><span>{{ len (where .Site.RegularPages "Type" "in" "img") }}</span> photos</li>
             <li><span>
