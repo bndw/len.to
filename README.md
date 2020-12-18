@@ -28,6 +28,6 @@ Run the live-reload server on http://localhost:1313
 make dev
 ```
 
-### Photos and content
+### License
 
-All photos © 2015 Ben Woodward unless otherwise noted.
+The code for this site is licensed under [GNU AGPLv3](https://choosealicense.com/licenses/agpl-3.0/). The content for this site is licensed under [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/).

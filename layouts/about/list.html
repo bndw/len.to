@@ -31,12 +31,13 @@
               {{ $currentTagCount }}
               </span> tags
             </li>
-            <li><a href="https://github.com/bndw/len.to">Source code</a></li>
-            <li><a href="https://circleci.com/gh/bndw/len.to">Latest build</a></li>
+            <li>Last update {{ .Site.LastChange.Format "January 2, 2006" }}</li>
             <li>Hugo version {{ hugo.Version }}</li>
-            <li>Last updated {{ .Site.LastChange }}</li>
           </ul>
-          <p class="outbound">© 2015-{{ now.Format "2006"}} <a href="https://bdw.to">Ben Woodward</a></p>
+          <ul class="outbound">
+            <li>The <a href="https://github.com/bndw/len.to">code for this site</a> is licensed under <a href="https://choosealicense.com/licenses/agpl-3.0/">GNU AGPLv3</a>.</li>
+            <li>The content for this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons BY-NC-ND</a>.</li>
+          </ul>
         </div>
       </div>
 
