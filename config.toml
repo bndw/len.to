@@ -2,6 +2,7 @@ baseURL = "https://len.to/"
 languageCode = "en-us"
 title = "len.to"
 paginate = 40
+paginatePath = ""
 [permalinks]
   post = "/post/:title/"
 [params]
