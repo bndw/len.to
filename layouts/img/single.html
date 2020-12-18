@@ -21,7 +21,7 @@
         <div class="nine columns right-side">
           <img src={{ .Params.img_url }}>
           <div class="row post-tags">
-            <a href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a> in <a href="/tags/{{ .Params.Location | lower | urlize }}">{{ .Params.Location }}</a>
+            <a href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
           </div>
           <div class="row post-tags">
               {{ if .Params.Tags }}
