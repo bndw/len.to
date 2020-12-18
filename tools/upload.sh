@@ -37,9 +37,22 @@ aws s3 cp --acl public-read "${filepath}" "s3://${bucket}/${new_filename}"
 # Copy the URL to the clipboard
 printf "${url}" | pbcopy
 
-# Create the content/img file
-hugo new "img/${id}.md"
-sed -i "" "s,original_fn:,original_fn: ${filepath}," "content/img/${id}.md"
-sed -i "" "s,img_url:,img_url: ${url}," "content/img/${id}.md"
 
-vi "content/img/${id}.md"
+echo "Enter location"
+read loc
+
+# Create the content/img file
+img="./content/img/${id}.md"
+touch "${img}"
+echo "---" > "${img}"
+echo "title: ${id}" >> "${img}"
+echo "date: $(date +%Y-%m-%d)" >> "${img}"
+echo "location: ${loc}" >> "${img}"
+echo "img_url: ${url}" >> "${img}"
+echo "original_fn: ${filename}" >> "${img}"
+echo "tags:" >> "${img}"
+echo "- ${loc}" >> "${img}"
+echo "" >> "${img}"
+echo "---" >> "${img}"
+
+vim "${img}"
