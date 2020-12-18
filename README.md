@@ -2,10 +2,10 @@
 
 # len.to
 
-A personal photo blog.
+My personal photo blog.
 
 <br>
-<img src="https://user-images.githubusercontent.com/4248167/100552489-5fb42480-323c-11eb-89b6-a43e5a417516.png">
+<img src="https://user-images.githubusercontent.com/4248167/102584656-baae9e00-40bb-11eb-842b-b8852bba12cb.png">
 <br>
 
 ### Quickstart
