@@ -3,12 +3,12 @@
 # Uploads an image to the len.to s3 bucket. Depends on exiftool
 set -e
 
-if [[ "$#" -ne 1 ]] ; then
+if [[ "$#" -ne 2 ]] ; then
   cat << EOF
 
 Uploads a file to the len.to s3 bucket.
 
-Usage: $0 <path_to_image>
+Usage: $0 <path_to_image> <date e.g. 2019-03-23>
 EOF
   exit 1
 fi
@@ -20,6 +20,7 @@ fi
 
 bucket=ginput
 filepath=$1
+ts=$2
 filename=$(basename "$1")
 extension="${filename##*.}"
 
@@ -46,7 +47,7 @@ img="./content/img/${id}.md"
 touch "${img}"
 echo "---" > "${img}"
 echo "title: ${id}" >> "${img}"
-echo "date: $(date +%Y-%m-%d)" >> "${img}"
+echo "date: ${ts}" >> "${img}"
 echo "location: ${loc}" >> "${img}"
 echo "img_url: ${url}" >> "${img}"
 echo "original_fn: ${filename}" >> "${img}"
