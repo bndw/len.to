@@ -18,22 +18,13 @@
           {{ partial "tag-list.html"}}
         </div>
         <div class="nine columns right-side">
-
-          {{ $paginator := .Paginate (where .Data.Pages "Type" "in" "img") 25}}
-
-          {{ partial "gallery.html" $paginator.Pages }}
-
-          <div class="gallery-pagination u-pull-right">
-            {{ if $paginator.HasNext }}
-              {{ if $paginator.HasPrev }}
-                <a id="pagination-prev" class="pagination-item" href="{{ $paginator.Prev.URL }}">back</a>
-              {{ end }}
-              <a id="pagination-next" class="pagination-item" href="{{ $paginator.Next.URL }}">next</a>
-            {{ else }}
-              fin
+          <div class="gallery">
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "in" "img") 25}}
+            {{ range  $paginator.Pages }}
+              <a href="{{ .Permalink }}"><img src={{ .Params.img_url }}></a>
             {{ end }}
           </div>
-
+          {{ template "_internal/pagination.html" . }}
         </div>
       </div>
     {{ partial "footer.html" . }}

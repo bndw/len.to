@@ -2,27 +2,25 @@
 </footer>
 <script>
 (function(){
+  document.addEventListener("keydown", (e) => {
+    let paginator = {
+      next: () => {
+        let a = document.querySelectorAll('[aria-label="Next"]')[0];
+        if (!a) {
+          return;
+        }
 
-  var paginator = {
-    next: function() {
-      var button = document.getElementById("pagination-next");
-      if (!button) {
-        return;
+        window.location = a.href;
+      },
+      prev: () => {
+        let a = document.querySelectorAll('[aria-label="Previous"]')[0];
+        if (!a) {
+          return;
+        }
+
+        window.location = a.href;
       }
-
-      button.click();
-    },
-    prev: function() {
-      var button = document.getElementById("pagination-prev");
-      if (!button) {
-        return;
-      }
-
-      button.click();
-    }
-  };
-
-  document.addEventListener("keydown", function(e) {
+    };
 
     switch(e.which) {
       case 37: // left
@@ -49,8 +47,8 @@
     e.preventDefault();
     this.classList.toggle("hidden");
 
-    var hiddenTags = document.querySelectorAll(".tag");
-    for (var i=0; i < hiddenTags.length; i++) {
+    let hiddenTags = document.querySelectorAll(".tag");
+    for (let i=0; i < hiddenTags.length; i++) {
       hiddenTags[i].classList.toggle("hidden");
     }
   });

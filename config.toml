@@ -1,5 +1,8 @@
 baseURL = "https://len.to/"
 languageCode = "en-us"
 title = "len.to"
+paginate = 40
 [permalinks]
   post = "/post/:title/"
+[params]
+  gallerySize = 40

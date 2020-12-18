@@ -166,28 +166,21 @@ ul.tag-posts > li.long {
   width: 100% !important;
   height: auto !important;
 }
-.gallery-pagination {
-  display: block;
-  font-size: 1em;
-  padding-right: 2em;
-  margin-bottom: 3em;
-}
-
 /* end galley */
 
 .right-side {
   font-size: 1.2em;
 }
 
-.pagination {
+ul.pagination {
   display: block;
+  float: right;
   font-size: 0.8em;
   padding: 1em 0em;
   margin-bottom: 3em;
 }
-
-.pagination-item {
-  padding-left: 0.8em;
+ul.pagination li {
+  display: inline-block;
 }
 
 @media (min-width: 550px) {
@@ -214,9 +207,5 @@ ul.tag-posts > li.long {
 
   .archive .row {
     padding: 1em;
-  }
-
-  .pagination {
-    display: inline-block;
   }
 }

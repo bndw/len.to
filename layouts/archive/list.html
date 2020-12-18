@@ -17,9 +17,8 @@
 
       <div class="row">
         <div class="three columns left-side">
-          <ul>
-            <li><a href="/">home</a></li>
-          </ul>
+          {{ partial "nav.html"}}
+          {{ partial "tag-list.html"}}
         </div>
         <div class="nine columns right-side">
           {{ $.Scratch.Set "count" 1 }}
