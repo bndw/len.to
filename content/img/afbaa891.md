@@ -9,5 +9,6 @@ tags:
 - Mazama, WA
 - Fish
 - camping
+- cars
 
 ---
