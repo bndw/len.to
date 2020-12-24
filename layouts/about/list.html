@@ -20,23 +20,35 @@
         </div>
         <div class="nine columns right-side">
           <ul class="outbound">
+            <li>len.to is a collection of photography by <a href="https://bdw.to">Ben Woodward</a>.</li>
+            <li>The name is borrowed from the musical term meaning "slowly" or "to be played slowly".</li>
+            <li>
+              The <a href="https://github.com/bndw/len.to">code for this site</a> is licensed under <a href="https://choosealicense.com/licenses/agpl-3.0/">GNU AGPLv3</a>.
+            </li>
+            <li>
+              The content on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons BY-NC-ND</a>.
+            </li>
+          </ul>
+
+          <ul class="outbound">
             <li><span>{{ len (where .Site.RegularPages "Type" "in" "img") }}</span> photos</li>
             <li><span>
-              {{ $currentTagCount := 0 }}
-              {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
-                {{ $currentTagCount = (add $currentTagCount (len $taxonomy.Pages)) }}
+              {{ $tagCount := 0 }}
+              {{ range where .Site.RegularPages "Type" "in" "img" }}
+                {{ $tagCount = (add $tagCount (len .Params.Tags)) }}
               {{ end }}
-              {{ $currentTagCount }}
+              {{ $tagCount }}
               </span> tags
+            </li>
+            <li><span>
+              {{ $totalImages := float (len (where .Site.RegularPages "Type" "in" "img")) }}
+              {{ $avgTags := div $tagCount $totalImages }}
+              {{ lang.NumFmt 2 $avgTags }}
+              </span> tags per image
             </li>
             <li>Last update {{ .Site.LastChange.Format "January 2, 2006" }}</li>
             <li>Hugo version {{ hugo.Version }}</li>
           </ul>
-          <ul class="outbound">
-            <li>The <a href="https://github.com/bndw/len.to">code for this site</a> is licensed under <a href="https://choosealicense.com/licenses/agpl-3.0/">GNU AGPLv3</a>.</li>
-            <li>The content for this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons BY-NC-ND</a>.</li>
-          </ul>
-          <p class="outbound">Created by <a href="https://bdw.to">Ben Woodward</a></p>
         </div>
       </div>
 
