@@ -1,0 +1,7 @@
+{{ $tags := slice }}
+{{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+  {{ $tags = $tags | append $name }} 
+{{ end }}
+
+{{ $main := resources.Get "js/main.js" | js.Build (dict "params" (dict "tags" $tags )) | minify | fingerprint }}
+<script type="text/javascript" src="{{ $main.RelPermalink }}" defer></script>
