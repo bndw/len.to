@@ -1,12 +1,7 @@
-<script>
-var images = [{{ range (where .Site.AllPages "Type" "in" "imgs") | shuffle }}{{ .Permalink }},{{ end }}],
-    selected;
+{{ $urls := slice }}
+{{ range where .Site.RegularPages "Type" "img" }}
+  {{ $urls = $urls | append .Permalink }} 
+{{ end }}
 
-// Sometimes []images ends up with an "undefined" element, resulting in
-// a redirect to /img. Make sure that doesn't happen.
-while (!selected) {
-  selected = images[Math.floor(Math.random()*images.length)];
-}
-
-window.location = selected;
-</script>
+{{ $js := resources.Get "js/random.js" | js.Build (dict "params" (dict "images" $urls )) | minify | fingerprint }}
+<script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
