@@ -1,6 +1,14 @@
 <script>
 (function(){
-  let tags = [{{ range $name, $taxonomy := . }}{{ $name }},{{ end }}];
+  // Insert search into the page, below the title
+  let el = document.createElement("div");
+  el.setAttribute("id", "search");
+  let title = document.getElementsByClassName("title")[0];
+  if (title) {
+    title.parentElement.appendChild(el);
+  }
+
+  let tags = [{{ range $name, $taxonomy := $.Site.Taxonomies.tags }}{{ $name }},{{ end }}];
   let search = {
     enabled: false,
     accuracy: 0.8,
