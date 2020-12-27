@@ -6,8 +6,10 @@ RUN apt-get update \
   && apt-get install -y curl
 
 # Install hugo
+ARG HUGO_VERSION=0.79.1
+
 WORKDIR /tmp
-RUN curl -SL https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz \
+RUN curl -L "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" \
 	| tar xz \
 	&& mv ./hugo /bin/hugo \
 	&& hugo version
