@@ -83,6 +83,15 @@
         console.log("searchEnabled: ", search.enabled);
         break;
 
+      case 82: // r: random 
+        if (!search.enabled) {
+          window.location = "/random";
+        } else {
+          search.append(String.fromCharCode(e.keyCode));
+          search.setResults();
+        }
+        break;
+
       case 83: // s: enable search
         if (!search.enabled) {
           search.enable();
