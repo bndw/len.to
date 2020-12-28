@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    {{ partial "header.html" . }}
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="three columns">
+          <a class="title" href="/">len.to</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns left-side">
+          {{ partial "nav.html"}}
+          {{ partial "tag-list.html"}}
+        </div>
+        <div class="nine columns right-side log">
+          <h2>{{ .Title }}</h2>
+          {{ .Content }}
+        </div>
+      </div>
+    {{ partial "scripts.html" . }}
+  </body>
+</html>
