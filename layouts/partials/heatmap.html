@@ -1,0 +1,28 @@
+<div id="calendar"></div>
+
+<!-- data -->
+{{ $m := dict }}
+{{ range sort (where .Site.RegularPages "Type" "in" "img") ".Date" "asc" }}
+  {{ $key := .Date.Format "2006-01-02" }}
+  {{ $val := int (index $m $key) }}
+  {{ if eq $val 0 }}
+    {{ $x := dict $key 1 }}
+    {{ $m = merge $m $x}}
+  {{ else }}
+    {{ $x := dict $key (add $val 1) }}
+    {{ $m = merge $m $x}}
+  {{ end }}
+{{ end }}
+
+<!-- styles -->
+{{ $calcss := resources.Get "css/calendar-heatmap.css" | minify }}
+<link rel="stylesheet" href="{{ $calcss.Permalink }}">
+
+<!-- scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.10.2/d3.min.js" charset="utf-8"></script>
+{{ $heatmapSrc := resources.Get "js/calendar-heatmap.js" | minify}}
+<script type="text/javascript" src="{{ $heatmapSrc.RelPermalink }}" defer></script>
+
+{{ $heatmapData := resources.Get "js/heatmap-data.js" | js.Build (dict "params" (dict "data" $m)) }}
+<script type="text/javascript" src="{{ $heatmapData.RelPermalink }}" defer></script>
