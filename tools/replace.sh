@@ -8,7 +8,8 @@ if [[ "$#" -ne 2 ]] ; then
 
 Replaces a file in the len.to s3 bucket.
 
-Usage: $0 <path_to_image>
+Usage: $0 <path_to_image> <target_img>
+e.g.: $0 /my/new/image.jpg existing.jpg
 EOF
   exit 1
 fi
