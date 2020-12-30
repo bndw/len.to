@@ -45,9 +45,14 @@
               {{ lang.NumFmt 2 $avgTags }}
               </span> tags per image
             </li>
-            <li>Last update {{ .Site.LastChange.Format "January 2, 2006" }}</li>
-            <li>Hugo version {{ hugo.Version }}</li>
+            <li>Hugo <a href="https://github.com/gohugoio/hugo/releases/tag/v{{ hugo.Version }}">v{{ hugo.Version }}</a></li>
           </ul>
+
+          <div>
+            <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/bndw/len.to">
+            <img alt="CircleCI" src="https://img.shields.io/circleci/build/github/bndw/len.to/master">
+          </div>
+
         </div>
       </div>
 
