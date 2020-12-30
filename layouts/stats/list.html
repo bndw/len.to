@@ -13,7 +13,32 @@
       </div>
 
       <div class="row">
+        <h4>Images by year</h4>
         {{ partial "heatmap.html" . }}
+      </div>
+
+      <br>
+
+      <div class="row">
+        <h4>Images by day of week</h4>
+        {{ $m := dict }}
+        {{ range sort (where .Site.RegularPages "Type" "in" "img") ".Date" "asc" }}
+          {{ $key := .Date.Format "Monday" }}
+          {{ $val := int (index $m $key) }}
+          {{ if eq $val 0 }}
+            {{ $x := dict $key 1 }}
+            {{ $m = merge $m $x}}
+          {{ else }}
+            {{ $x := dict $key (add $val 1) }}
+            {{ $m = merge $m $x}}
+          {{ end }}
+        {{ end }}
+
+        <ul>
+        {{ range $day, $count := $m }}
+          <li>{{$day}}: {{$count}}</li>
+        {{ end }}
+        </ul>
       </div>
 
     </div>
