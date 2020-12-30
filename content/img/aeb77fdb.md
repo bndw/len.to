@@ -8,5 +8,6 @@ original_fn: ""
 tags:
 - Oregon Coast
 - landscapes
+- ocean
 
 ---

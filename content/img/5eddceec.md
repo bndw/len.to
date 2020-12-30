@@ -8,5 +8,6 @@ tags:
 - Olympic Peninsula, WA
 - landscapes
 - b&w
+- ocean
 
 ---

@@ -7,5 +7,6 @@ original_fn: L1000601_01.jpg
 tags:
 - Olympic Peninsula, WA
 - landscapes
+- water
 
 ---

@@ -8,7 +8,8 @@ original_fn: ""
 tags:
 - Red Rock Canyon, NV
 - Kyl
-- 35mm
+- portraits
 - climbing
+- 35mm
 
 ---
