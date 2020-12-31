@@ -18,7 +18,7 @@
           {{ partial "tag-list.html"}}
         </div>
         <div class="nine columns right-side">
-          <img src={{ .Params.img_url }}>
+          {{ partial "img.html" . }}
           <div class="row post-tags">
             <a href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
           </div>
