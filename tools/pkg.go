@@ -82,6 +82,9 @@ tags: %q
 		string(p.Content),
 	)
 }
+func (p *Post) Overwrite() error {
+	return p.Write(p.Path)
+}
 
 func (p *Post) Write(path string) error {
 	var body []byte
