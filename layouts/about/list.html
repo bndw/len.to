@@ -30,28 +30,22 @@
           </ul>
 
           <ul class="outbound">
-            <li><span>{{ len (where .Site.RegularPages "Type" "in" "img") }}</span> photos</li>
-            <li><span>
+            {{ $images := where .Site.RegularPages "Type" "img" }}
+            <li><span>{{ len $images }}</span> photos</li>
+            <li>
               {{ $tagCount := 0 }}
-              {{ range where .Site.RegularPages "Type" "in" "img" }}
-                {{ $tagCount = (add $tagCount (len .Params.Tags)) }}
+              {{ range $images }}
+                {{ $tagCount = add $tagCount (len .Params.Tags) }}
               {{ end }}
-              {{ $tagCount }}
-              </span> tags
+              <span>{{ $tagCount }}</span> tags
             </li>
-            <li><span>
-              {{ $totalImages := float (len (where .Site.RegularPages "Type" "in" "img")) }}
+            <li>
+              {{ $totalImages := float (len $images) }}
               {{ $avgTags := div $tagCount $totalImages }}
-              {{ lang.NumFmt 2 $avgTags }}
-              </span> tags per image
+              <span>{{ lang.NumFmt 2 $avgTags }}</span> tags per image
             </li>
             <li>Hugo <a href="https://github.com/gohugoio/hugo/releases/tag/v{{ hugo.Version }}">v{{ hugo.Version }}</a></li>
           </ul>
-
-          <div>
-            <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/bndw/len.to">
-            <img alt="CircleCI" src="https://img.shields.io/circleci/build/github/bndw/len.to/master">
-          </div>
 
         </div>
       </div>
