@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/bndw/len.to.svg?style=svg)](https://circleci.com/gh/bndw/len.to)
+![ci](https://github.com/bndw/len.to/workflows/ci/badge.svg)
 
 # len.to
 
