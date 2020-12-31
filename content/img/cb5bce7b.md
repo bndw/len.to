@@ -7,7 +7,7 @@ img_url: https://d17enza3bfujl8.cloudfront.net/cb5bce7b.jpg
 original_fn: ""
 tags:
 - Olympic Peninsula, WA
-- on-the-road
+- on the road
 - trees
 
 ---
