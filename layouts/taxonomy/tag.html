@@ -20,7 +20,7 @@
         <div class="nine columns right-side">
           <div class="gallery">
             {{ range  .Paginator.Pages }}
-              <a href="{{ .Permalink }}"><img src={{ .Params.img_url }}></a>
+              {{ partial "img.html" . }}
             {{ end }}
           </div>
           {{ template "_internal/pagination.html" . }}
