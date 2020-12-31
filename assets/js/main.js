@@ -103,17 +103,6 @@ let search = {
   }
 }
 
-// Tag list: show more
-document.getElementById("show-more").addEventListener("click", function(e) {
-  e.preventDefault();
-  this.classList.toggle("hidden");
-
-  let hiddenTags = document.querySelectorAll(".tag");
-  for (let i=0; i < hiddenTags.length; i++) {
-    hiddenTags[i].classList.toggle("hidden");
-  }
-});
-
 // Global keybindings
 document.addEventListener("keydown", (e) => {
   switch(e.which) {

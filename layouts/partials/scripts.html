@@ -3,5 +3,5 @@
   {{ $tags = $tags | append $name }} 
 {{ end }}
 
-{{ $main := resources.Get "js/main.js" | js.Build (dict "params" (dict "tags" $tags )) | minify | fingerprint }}
+{{ $main := resources.Get "js/main.js" | js.Build (dict "params" (dict "tags" $tags)) | minify | fingerprint }}
 <script type="text/javascript" src="{{ $main.RelPermalink }}" defer></script>
