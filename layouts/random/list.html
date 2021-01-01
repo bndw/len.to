@@ -1,7 +1,13 @@
-{{ $urls := slice }}
-{{ range where .Site.RegularPages "Type" "img" }}
-  {{ $urls = $urls | append .Permalink }} 
-{{ end }}
+<!DOCTYPE html>
+<head>
+  <title>len.to</title>
+</head>
+<body>
+  {{ $urls := slice }}
+  {{ range where .Site.RegularPages "Type" "img" }}
+    {{ $urls = $urls | append .Permalink }} 
+  {{ end }}
 
-{{ $js := resources.Get "js/random.js" | js.Build (dict "params" (dict "images" $urls )) | minify | fingerprint }}
-<script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
+  {{ $js := resources.Get "js/random.js" | js.Build (dict "params" (dict "images" $urls )) | minify | fingerprint }}
+  <script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
+</body>
