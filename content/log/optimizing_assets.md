@@ -22,13 +22,13 @@ solves these problems natively.
 ## Removing JavaScript from HTML templates
 
 I started by extracting all JavaScript from HTML and appending it to a single `./assets/js/main.js` file. 
-From HTML I load, process, and render the script:
+Then from HTML I load, process, and render the script:
 ```
 {{ $main := resources.Get "js/main.js" | js.Build | minify | fingerprint }}
 <script type="text/javascript" src="{{ $main.RelPermalink }}" defer></script>
 ```
 
-However, this blew up because the current JavaScript depends on Go templating to build an array of tags:
+However, this blew up because the current JavaScript implementation depends on Go templating to build an array of tags:
 ```
 let tags = [{{ range $name, $_ := $.Site.Taxonomies.tags }}{{ $name }},{{ end }}]
 ```
@@ -88,5 +88,5 @@ body {
 These changes, implemented in 
 [0b4e300](https://github.com/bndw/len.to/commit/0b4e3002b03bb49ad08efc69e941f99e6a7c0da2) and 
 [0c29a6c](https://github.com/bndw/len.to/commit/0c29a6c13b4f2c20943d31fd073e0c721d17b002) 
-resulted in faster page load times, improved user privacy, and better code quality.
+produced faster page load times, improved user privacy, and generally better code quality.
 ##
