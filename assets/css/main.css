@@ -35,6 +35,7 @@ li {
 
 h1, h2, h3, h4 h5 {
   font-size: 1.3em;
+  letter-spacing: initial;
 }
 
 p {
@@ -168,6 +169,12 @@ ul.tag-posts > li.long {
   height: auto !important;
 }
 /* end galley */
+
+/* log */
+.log a {
+  text-decoration: underline;
+}
+/* end log */
 
 .right-side {
   font-size: 1.2em;
