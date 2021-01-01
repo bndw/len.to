@@ -5,19 +5,19 @@ draft: false
 
 ---
 
-I've been wanting to add a favicon to this site for a while, but the idea 
+This website has needed a favicon for a while, but the idea 
 of designing one isn't really my cup of tea. Then I had an idea: Why not 
 use an emoji?
 ## 
 
-Turns out [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) can draw images from text and is valid favicon format [supported by most major browsers](https://en.wikipedia.org/wiki/Favicon#File_format_support). 
+Turns out [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) can draw images from text and is a valid favicon format [supported by most major browsers](https://en.wikipedia.org/wiki/Favicon#File_format_support). 
 
 
 ##
 ## Here's how it works
 
-Create a `favicon.svg` file. There's a lot of opinions on what size(s) to make your favicon,
-but all modern browsers support a 32x32 icon so we'll use that. Just set the `font-size` to 32 and offset the `y` axis by the same amount, so the icon is visible:
+Create a `favicon.svg` file. There are a lot of opinions on what size(s) to make your favicon,
+but modern browsers support a 32x32 icon so we'll use that. Just set the `font-size` to 32 and offset the `y` axis by the same amount, so the icon is visible:
 ```
 <svg xmlns="http://www.w3.org/2000/svg">
   <text font-size="32" y="32">🖼</text>
@@ -31,4 +31,4 @@ Then use it in your `index.html`:
 </head>
 ```
 
-Here's [the commit](https://github.com/bndw/len.to/commit/9c534a6369c72a03c12158a3334570201196649f) where I implemented the emoji favicon for this site.
+Here's [the commit](https://github.com/bndw/len.to/commit/9c534a6369c72a03c12158a3334570201196649f) implementing the emoji favicon on this site.
