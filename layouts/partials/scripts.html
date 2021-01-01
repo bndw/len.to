@@ -4,4 +4,4 @@
 {{ end }}
 
 {{ $main := resources.Get "js/main.js" | js.Build (dict "params" (dict "tags" $tags)) | minify | fingerprint }}
-<script type="text/javascript" src="{{ $main.RelPermalink }}" defer></script>
+<script src="{{ $main.RelPermalink }}" defer></script>
