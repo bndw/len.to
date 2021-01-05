@@ -41,6 +41,16 @@
         </ul>
       </div>
 
+      <div class="row">
+        {{ $images := where .Site.RegularPages "Type" "img" }}
+        {{ $tagged := 0 }}
+        {{ range $images }}{{ $tagged = add $tagged (len .Params.Tags) }}{{ end }}
+        <h4>{{ len $images }} images indexed under {{ $tagged }} tags</h4>
+      </div>
+      <div class="row">
+        {{ partial "tag-cloud.html" . }}
+      </div>
+
     </div>
   </body>
 </html>

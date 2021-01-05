@@ -13,7 +13,7 @@ const calData = Object.keys(data).map(date => ({
 const div_id = 'calendar';
 const label = 'Photos';
 const color = '#cd2327';
-const overview = 'year'; // year, month, day
+const overview = 'global'; // global, year, month, day
 const handler = function (val) {
   // TODO: What does this do?
   console.log(val);
