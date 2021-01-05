@@ -5,35 +5,33 @@ draft: false
 
 ---
 
-I ran this website through an [HTML validator](https://validator.w3.org/nu/) and
-discovered it was missing some closing `</div>` tags. Tracking down the source of the 
-syntax bug can be challenging when the HTML is generated, so I set out to [add 
-HTML linting](https://github.com/bndw/len.to/issues/26) to the build process in hopes of catching problems early.
+I ran this website through an HTML validator and
+discovered it was missing some closing `</div>` tags. Tracking these errors down 
+can be challenging with generated HTML, so I decided to add linting to the build process and catch problems early.
 
 ##
-## Nu HTML Checker
 
-The [Nu HTML Checker](https://validator.w3.org/nu/about.html) I used previously is 
-[open source](https://github.com/validator/validator) and conveniently ships a 
-[Docker image](https://hub.docker.com/r/validator/validator/) containing the `vnu` CLI. Once I plugged their 
-Docker image into the multi-stage build, there were two small challenges:
+The [Nu HTML Checker](https://validator.w3.org/nu/) I used above conveniently ships a 
+[Docker image](https://hub.docker.com/r/validator/validator/) containing a CLI called `vnu`. 
+I ran into two small challenges integrating `vnu` in the multi-stage build:
+
 ##
-## 1. The [vnu](https://validator.github.io/validator/#usage) binary wants a list of files
+## 1. `vnu` wants a list of files
 According to the [usage](https://validator.github.io/validator/#usage) vnu wants a list of files:
 ```
 vnu-runtime-image/bin/vnu OPTIONS FILES
 ```
 
 However Hugo produces a `public` directory containing a tree of HTML. 
-To work around this I used `find` to create a file containing the list of Hugo-generated HTML files:
-  ```
-  RUN find /build/public -type f -name "*.html" > /tmp/htmlfiles.txt
-  ```
+To work around this I used `find` to create a file containing a list of generated HTML files:
+```
+RUN find /build/public -type f -name "*.html" > /tmp/htmlfiles.txt
+```
 Now we can just `cat /tmp/htmlfiles.txt` and pass the output to `vnu` 
 
 ##
 ## 2. `validator/validator` is based on a "distroless" image
-The [validator/validator](https://hub.docker.com/r/validator/validator/) image is based on `gcr.io/distroless/base` which means it doesn't have the tools I need, specifically `cat`. To work around this I copied in `cat` from the previous build stage:
+The [validator/validator](https://hub.docker.com/r/validator/validator/) image is based on `gcr.io/distroless/base` and doesn't have `cat`, so instead I grabbed it from the previous build stage:
 ```
 COPY --from=build /bin/cat /bin/cat
 ```

@@ -5,10 +5,6 @@ draft: false
 
 ---
 
-This website has needed a favicon for a while, but the idea 
-of designing one isn't really my cup of tea. Then I had an idea: Why not 
-use an emoji?
-## 
 
 Turns out [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) can draw images from text and is a valid favicon format [supported by most major browsers](https://en.wikipedia.org/wiki/Favicon#File_format_support). 
 
