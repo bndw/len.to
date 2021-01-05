@@ -18,35 +18,29 @@
           {{ partial "tag-list.html"}}
         </div>
         <div class="nine columns right-side">
+          {{ $images := where .Site.RegularPages "Type" "img" }}
+          {{ $tagged := 0 }}
+          {{ range $images }}{{ $tagged = add $tagged (len .Params.Tags) }}{{ end }}
+
           <ul class="outbound">
             <li>len.to is a collection of photography by <a href="https://bdw.to">Ben Woodward</a>.</li>
-            <li>The name is borrowed from the musical term meaning "slowly" or "to be played slowly".</li>
+            <li>There are currently {{ len $images }} images indexed under {{ $tagged }} tags.
+            <li>The name len.to is a reference to the musical term meaning "slowly" or "to be played slowly".</li>
+          </ul>
+
+          <ul>
+            <li>Explore the list of tags on the left or search by pressing <span class="code">s</span>.</li>
+          </ul>
+
+          <ul class="outbound">
             <li>
-              The <a href="https://github.com/bndw/len.to">code for this site</a> is licensed under <a href="https://choosealicense.com/licenses/agpl-3.0/">GNU AGPLv3</a>.
+              The <a href="https://github.com/bndw/len.to">code for this site</a> is open source and licensed under <a href="https://choosealicense.com/licenses/agpl-3.0/">GNU AGPLv3</a>.
             </li>
             <li>
               The content on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons BY-NC-ND</a>.
             </li>
+            <li>Built with Hugo <a href="https://github.com/gohugoio/hugo/releases/tag/v{{ hugo.Version }}">v{{ hugo.Version }}</a> on {{ .Site.LastChange.Format "Mon, 02 Jan 2006 15:04:05 MST" }}. </li>
           </ul>
-
-          <ul class="outbound">
-            {{ $images := where .Site.RegularPages "Type" "img" }}
-            <li><span>{{ len $images }}</span> photos</li>
-            <li>
-              {{ $tagCount := 0 }}
-              {{ range $images }}
-                {{ $tagCount = add $tagCount (len .Params.Tags) }}
-              {{ end }}
-              <span>{{ $tagCount }}</span> tags
-            </li>
-            <li>
-              {{ $totalImages := float (len $images) }}
-              {{ $avgTags := div $tagCount $totalImages }}
-              <span>{{ lang.NumFmt 2 $avgTags }}</span> tags per image
-            </li>
-            <li>Hugo <a href="https://github.com/gohugoio/hugo/releases/tag/v{{ hugo.Version }}">v{{ hugo.Version }}</a></li>
-          </ul>
-
         </div>
       </div>
 
