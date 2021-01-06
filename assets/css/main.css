@@ -214,6 +214,11 @@ ul.pagination li {
     display: block;
     overflow: scroll;
     max-height: 250px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .desktop-tag-list::-webkit-scrollbar { /* Chrome, Safari, Opera */
+    display: none;
   }
   .tag-list {
     display: none;
