@@ -13,23 +13,19 @@ const KeyS         = 83;
 const paginator = {
   next: () => {
     let a = document.querySelectorAll('[aria-label="Next"]')[0];
-    if (!a) {
-      return;
+    if (a) {
+      window.location = a.href;
     }
-
-    window.location = a.href;
   },
   prev: () => {
     let a = document.querySelectorAll('[aria-label="Previous"]')[0];
-    if (!a) {
-      return;
+    if (a) {
+      window.location = a.href;
     }
-
-    window.location = a.href;
   }
 };
 
-let search = {
+const search = {
   enabled: false,
   accuracy: 0.8,
   val: "",
@@ -47,7 +43,7 @@ let search = {
   enable: function() {
     this.enabled = true;
     this.el.classList.remove("hidden");
-    this.setResults();
+    this.render();
   },
   disable: function() {
     this.enabled = false;
@@ -57,33 +53,29 @@ let search = {
   },
   append: function(s) {
     this.val += s.toLowerCase();
-    this.setResults();
+    this.render();
   },
   del: function() {
     this.val = this.val.slice(0, -1);
-    this.setResults();
+    this.render();
   },
-  setResults: function() {
+  render: function() {
     let html = "";
     tags.filter((tag) => this.fuzzy(tag, this.val, this.accuracy)).forEach((tag) => {
-      // Wrap each matching tag letter in a span
       let displayTag = "";
-      for (let t=0; t < tag.length; t++) {
-        let tagLetter = tag[t],
-            match = false;
+      for (let i=0; i < tag.length; i++) {
+        let char = tag[i], match = false;
         for (let v=0; v < this.val.length; v++) {
-          let queryLetter = this.val[v];
-          if (tagLetter === queryLetter) {
-            match = true;
-          }
+          char === this.val[v] ? match = true : match = false;
         }
+        // Wrap matched search chars in a span for highlight.
         if (match) {
-          displayTag += '<span class="highlight">' + tagLetter + '</span>';
+          displayTag += `<span class="highlight">${char}</span>`;
         } else {
-          displayTag += tagLetter;
+          displayTag += char;
         }
       }
-      html += '<a href="/tags/' + tag + '"><div>' + displayTag + '</div></a>'
+      html += '<a href="/tags/' + tag + '"><div>' + displayTag + '</div></a>';
     });
     this.el.innerHTML = html;
   },
@@ -118,51 +110,49 @@ document.addEventListener("keydown", (e) => {
       break;
 
     case KeyR: // r: random 
-      if (!search.enabled) {
-        window.location = "/random";
-      } else {
+      if (search.enabled) {
         search.append(String.fromCharCode(e.keyCode));
+      } else {
+        window.location = "/random";
       }
       break;
 
     // Search controls
     case KeyS:
-      if (!search.enabled) {
+      if (search.enabled) {
+        search.append(String.fromCharCode(e.keyCode));
+      } else {
         search.enable();
-        console.log("searchEnabled: ", search.enabled);
-        return;
       }
-      search.append(String.fromCharCode(e.keyCode));
       break;
 
     case KeyEsc:
-      search.disable();
-      console.log("searchEnabled: ", search.enabled);
+      if (search.enabled) {
+        search.disable();
+      }
       break;
 
     case KeyBackspace:
-      e.preventDefault();
       if (search.enabled) {
         search.del();
+        e.preventDefault();
       }
       break;
 
     case KeyEnter:
-      if (!search.enabled) {
-        return;
-      }
-
-      let match = search.bestMatch();
-      if (match) {
-        window.location = "/tags/" + match;
+      if (search.enabled) {
+        let tag = search.bestMatch();
+        if (tag) {
+          window.location = "/tags/" + tag;
+        }
       }
       break;
 
     default:
-      if (!search.enabled) {
-        return;
+      if (search.enabled) {
+        search.append(String.fromCharCode(e.keyCode));
       }
-      search.append(String.fromCharCode(e.keyCode));
+      break;
 
   }
 }, false);
