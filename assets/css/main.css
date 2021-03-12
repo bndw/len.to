@@ -90,6 +90,9 @@ footer {
 	font-size: 0.8em;
   line-height: 1.6;
 }
+.post-tags .tag {
+  font-size: 0.9em;
+}
 
 ul.tags {
   margin-top: 1.8em;

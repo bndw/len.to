@@ -26,7 +26,7 @@
           <div class="row post-tags">
               {{ if .Params.Tags }}
                 {{ range $key, $tag := .Params.Tags }}
-                  {{- if ne $key 0 }}, {{ end }}<a href='/tags/{{ $tag | urlize }}'>#{{ $tag | lower }}</a>
+                  {{- if ne $key 0 }}| {{ end }}<a class="tag" href='/tags/{{ $tag | urlize }}'>{{ $tag | lower }}</a>
                 {{ end }}
               {{ end }}
           </div>
