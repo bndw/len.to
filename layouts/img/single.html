@@ -2,6 +2,12 @@
 <html>
   <head>
     {{ partial "header.html" . }}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:title" content="{{ dateFormat "01/02/2006" .Date }} | {{ delimit .Params.tags ", " }}" />
+    <meta property="og:image" content="{{ .Params.img_url }}" />
+
   </head>
   <body>
     <div class="container">
