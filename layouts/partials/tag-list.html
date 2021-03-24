@@ -3,11 +3,3 @@
     <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
   {{ end }}
 </ul>
-
-<ul class="tag-list">
-  {{ range first 5 (sort site.Taxonomies.tags "value" "desc")}}
-    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
-  {{ end }}
-
-  <li><a href="/tags">+ show all</a></li>
-</ul>
