@@ -161,8 +161,11 @@ document.addEventListener("keydown", (e) => {
 search.init();
 
 // Rotate image
-let angle = 0;
-document.getElementById('rotate').addEventListener("click", () => {
-  let img = document.getElementsByTagName('img')[0];
-  img.setAttribute("style", `transform: rotate(${angle+=90}deg)`);
-});
+const rotate = document.getElementById('rotate');
+if (rotate) {
+  let angle = 0;
+  rotate.addEventListener("click", () => {
+    let img = document.getElementsByTagName('img')[0];
+    img.setAttribute("style", `transform: rotate(${angle+=90}deg)`);
+  });
+}
