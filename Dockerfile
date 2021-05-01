@@ -24,4 +24,5 @@ RUN vnu-runtime-image/bin/vnu --verbose --errors-only $(cat /tmp/html)
 
 # Execution stage
 FROM nginx:stable-alpine
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /build/public /usr/share/nginx/html
