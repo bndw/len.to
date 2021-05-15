@@ -1,0 +1,22 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>len.to rss</title>
+    <link>{{ .Permalink }}</link>
+    <description>Recent content on len.to</description>
+    <language>en-us</language>
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{- with .OutputFormats.Get "RSS" -}}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end -}}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" "img") }}
+    {{ range (where .Site.RegularPages "Type" "in" "img") }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ delimit .Params.tags ", " | html }}</description>
+    </item>
+    {{ end }}
+  </channel>
+</rss>
