@@ -8,7 +8,6 @@
     {{- with .OutputFormats.Get "RSS" -}}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end -}}
-    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" "img") }}
     {{ range (where .Site.RegularPages "Type" "in" "img") }}
     <item>
       <title>{{ .Date.Format "Monday, Jan 2, 2006" | safeHTML }}</title>
