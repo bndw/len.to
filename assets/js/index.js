@@ -75,7 +75,7 @@ const search = {
           displayTag += char;
         }
       }
-      html += '<a href="/tags/' + tag + '"><div>' + displayTag + '</div></a>';
+      html += `<a href="/tags/${tag}"><div>${displayTag}</div></a>`;
     });
     this.el.innerHTML = html;
   },
