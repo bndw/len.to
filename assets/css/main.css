@@ -159,7 +159,9 @@ ul.tag-posts > li.long {
   list-style-type: none;
 }
 .about .outbound a {
-  text-decoration: underline;
+  border-bottom: 1px solid #c2c2c2;
+  padding-bottom: 0.1rem;
+  text-decoration: none;
 }
 /* end about */
 
