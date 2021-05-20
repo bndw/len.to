@@ -1,5 +1,5 @@
 REPO ?= bndw/len.to
-HUGO_VERSION=0.79.1
+HUGO_VERSION=0.83.1
 
 GITSHA=$(shell git rev-parse --short HEAD)
 TAG_COMMIT=$(REPO):$(GITSHA)
