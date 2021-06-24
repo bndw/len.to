@@ -18,7 +18,8 @@
           {{ partial "tag-list.html"}}
         </div>
         <div class="nine columns right-side">
-          {{ $images := where .Site.RegularPages "Type" "img" }}
+          {{ $images := (where .Site.RegularPages "Type" "img").ByDate.Reverse }}
+          {{ $mostRecent := ""}} {{range first 1 $images}} {{ $mostRecent = .Permalink }} {{end}}
           {{ $tagged := 0 }}
           {{ range $images }}{{ $tagged = add $tagged (len .Params.Tags) }}{{ end }}
 
@@ -28,7 +29,7 @@
               There are currently {{ len $images }} images
               indexed under {{ $tagged }} tags.
             </li>
-            <li>The most recent image was added on {{ .Site.LastChange.Format "Monday, January 2, 2006" }}.</li>
+            <li>The <a href="{{ $mostRecent }}">most recent</a> image was added on {{ .Site.LastChange.Format "Monday, January 2, 2006" }}.</li>
           </ul>
 
           <p>Hot keys (JavaScript required)</p>
