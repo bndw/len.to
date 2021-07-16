@@ -16,7 +16,7 @@ RUN hugo
 RUN find ./public -type f -name "*.html" > /tmp/html
 
 # Validation stage
-FROM validator/validator:latest as validator
+FROM ghcr.io/validator/validator:latest as validator
 COPY --from=build /bin/cat /bin/cat
 COPY --from=build /build/public /build/public
 COPY --from=build /tmp/html /tmp/html
