@@ -26,8 +26,8 @@
           <ul class="outbound">
             <li>len.to is a collection of photography by <a href="https://bdw.to">Ben Woodward</a>.</li>
             <li>
-              There are currently {{ len $images }} images
-              indexed under {{ $tagged }} tags.
+              There are currently {{ len $images }} <a href="/archive">images</a>
+              indexed under {{ $tagged }} <a href="/tags">tags</a>.
             </li>
             <li>The <a href="{{ $mostRecent }}">most recent</a> image was added on {{ .Site.LastChange.Format "Monday, January 2, 2006" }}.</li>
           </ul>
