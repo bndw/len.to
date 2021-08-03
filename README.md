@@ -5,7 +5,7 @@
 My personal photo blog.
 
 <br>
-<img src="https://user-images.githubusercontent.com/4248167/108465520-06ee9980-7237-11eb-8047-8f7fbd149cf2.png">
+<img src="https://user-images.githubusercontent.com/4248167/127943051-a5803622-3af5-4125-a726-1d6c92b48103.png">
 <br>
 
 ### Quickstart
