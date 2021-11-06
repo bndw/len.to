@@ -37,6 +37,14 @@
               {{ end }}
           </div>
 
+          {{ if .Params.purchase_url }}
+          <div class="row post-tags">
+            <a class="two columns price" href="{{ .Params.purchase_url }}">
+              <img src="https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg">
+              <p>{{ .Params.purchase_price }}</p>
+            </a>
+          </div>
+          {{ end }}
         </div>
       </div>
     </div>
