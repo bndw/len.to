@@ -3,6 +3,9 @@
 # Uploads an image to the len.to s3 bucket. Depends on exiftool
 set -e
 
+S3BUCKET=ginput
+CDN_BASE="https://d17enza3bfujl8.cloudfront.net"
+
 if [[ "$#" -ne 2 ]] ; then
   cat << EOF
 
@@ -18,7 +21,6 @@ if ! [[ -x "$(command -v exiftool)" ]] ; then
   exit 1
 fi
 
-bucket=ginput
 filepath=$1
 ts=$2
 filename=$(basename "$1")
@@ -26,18 +28,13 @@ extension="${filename##*.}"
 
 id=$(uuidgen | tr [:upper:] [:lower:] | cut -d'-' -f 1)
 new_filename="${id}.${extension}"
-
-url="https://d17enza3bfujl8.cloudfront.net/${new_filename}"
+url="${CDN_BASE}/${new_filename}"
 
 # Strip all metadata from the image
 exiftool -all= $1
 
 # Upload the image
-aws s3 cp --acl public-read "${filepath}" "s3://${bucket}/${new_filename}"
-
-# Copy the URL to the clipboard
-printf "${url}" | pbcopy
-
+aws s3 cp --acl public-read "${filepath}" "s3://${S3BUCKET}/${new_filename}"
 
 echo "Enter location"
 read loc
