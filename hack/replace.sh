@@ -1,3 +1,7 @@
+# Copyright 2022 Ben Woodward. All rights reserved.
+# Use of this source code is governed by a GPL style
+# license that can be found in the LICENSE file.
+#
 #!/usr/bin/env bash
 #
 # Replaces an image in the len.to s3 bucket. Depends on exiftool
