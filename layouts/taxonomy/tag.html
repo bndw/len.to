@@ -25,7 +25,7 @@
         <div class="nine columns right-side">
           <div class="gallery">
             {{ range  .Paginator.Pages }}
-              {{ partial "img.html" . }}
+              {{ partial "imglink.html" . }}
             {{ end }}
           </div>
           {{ template "_internal/pagination.html" . }}
