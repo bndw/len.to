@@ -21,7 +21,7 @@
 
 <!-- styles -->
 {{ $calcss := resources.Get "css/calendar-heatmap.css" | minify }}
-<link rel="stylesheet" href="{{ $calcss.Permalink }}">
+<link rel="stylesheet" href="{{ $calcss.RelPermalink }}">
 
 <!-- scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" charset="utf-8"></script>

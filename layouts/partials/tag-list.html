@@ -5,6 +5,6 @@
 -->
 <ul class="desktop-tag-list hidden">
   {{ range sort site.Taxonomies.tags "value" "desc"}}
-    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
+    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title | lower }}</a> ({{ .Count }})</li>
   {{ end }}
 </ul>

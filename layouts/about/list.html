@@ -24,7 +24,7 @@
         </div>
         <div class="nine columns right-side">
           {{ $images := (where .Site.RegularPages "Type" "img").ByDate.Reverse }}
-          {{ $mostRecent := ""}} {{range first 1 $images}} {{ $mostRecent = .Permalink }} {{end}}
+          {{ $mostRecent := ""}} {{range first 1 $images}} {{ $mostRecent = .RelPermalink }} {{end}}
           {{ $tagged := 0 }}
           {{ range $images }}{{ $tagged = add $tagged (len .Params.Tags) }}{{ end }}
 

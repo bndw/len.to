@@ -34,7 +34,7 @@
 
   {{ $urls := slice }}
   {{ range where .Site.RegularPages "Type" "img" }}
-    {{ $urls = $urls | append .Permalink }} 
+    {{ $urls = $urls | append .RelPermalink }} 
   {{ end }}
 
   {{ $js := resources.Get "js/random.js" | js.Build (dict "params" (dict "images" $urls )) | minify | fingerprint }}

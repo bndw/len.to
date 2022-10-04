@@ -32,7 +32,7 @@
           {{ partial "img.html" . }}
           <div class="row post-tags">
             <span id="rotate">⟳</span>
-            <a href="{{ .Permalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
+            <a href="{{ .RelPermalink }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</a>
           </div>
           <div class="row post-tags">
               {{ if .Params.Tags }}

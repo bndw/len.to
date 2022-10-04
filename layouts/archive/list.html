@@ -43,7 +43,7 @@
                 {{ range (where .Pages "Type" "img") }}
                   <div class="row">
 
-                    <a href="{{ .Permalink }}">
+                    <a href="{{ .RelPermalink }}">
                       <div class="three columns left-side">
                         <div class="date">{{ .Date.Format "January 02, 2006" }}</div>
                       </div>

@@ -21,7 +21,7 @@
         <div class="ten columns left-side">
           <ul>
             {{ range where .Site.RegularPages "Type" "log" }}
-            <li><a href="{{ .Permalink }}">{{ dateFormat "1/2/2006" .Date }}: {{ .Title }}</a></li>
+            <li><a href="{{ .RelPermalink }}">{{ dateFormat "1/2/2006" .Date }}: {{ .Title }}</a></li>
             {{ end }}
           </ul>
         </div>

@@ -16,4 +16,4 @@
 {{ $skeleton := resources.Get "css/skeleton.css" }}
 {{ $style := resources.Get "css/main.css" }}
 {{ $css := slice $skeleton $style | resources.Concat "css/bundle.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
