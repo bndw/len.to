@@ -28,6 +28,7 @@
           {{ $tagged := 0 }}
           {{ range $images }}{{ $tagged = add $tagged (len .Params.Tags) }}{{ end }}
 
+          <h2>About</h2>
           <ul class="outbound">
             <li>len.to is a collection of photography by <a href="https://bdw.to">Ben Woodward</a>.</li>
             <li>
@@ -37,29 +38,27 @@
             <li>The <a href="{{ $mostRecent }}">most recent</a> image was added on {{ .Site.LastChange.Format "Monday, January 2, 2006" }}.</li>
           </ul>
 
-          <p>Hot keys (JavaScript required)</p>
-          <ul>
-            <li><span class="code">s</span> search images by tag</li>
-            <li><span class="code">esc</span> cancel search</li>
-            <li><span class="code">r</span> random image</li>
-            <li><span class="code">→</span> next page</li>
-            <li><span class="code">←</span> previous page</li>
-          </ul>
-
           <ul class="outbound">
             <li>
-              The <a href="https://github.com/bndw/len.to">code for this site</a> is open source and licensed under <a href="https://choosealicense.com/licenses/agpl-3.0/">GNU AGPLv3</a>.
+              The code for this site is <a href="https://github.com/bndw/len.to">open source</a> and licensed under <a href="https://choosealicense.com/licenses/agpl-3.0/">GNU AGPLv3</a>.
             </li>
             <li>
               The content on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons BY-NC-ND</a>.
             </li>
+          </ul>
+
+          <h2>Design</h2>
+          <ul class="outbound">
             <li>
-              <a href="https://thiswebsitedoesnottrackyou.com">This website does not track you</a>
-            </li>
-            <li>
-              <a href="/index.xml">RSS Feed</a>
+              len.to is my opinionated take on a photo gallery.
+              It's built using basic HTML and CSS, and includes some intentional JavaScript to enable additional features.
+              It also works fine without JavaScript.
+              It's compiled into a static site using <a href="https://github.com/gohugoio/hugo">Hugo</a> and distributed as a Docker image.
+              CSS and JavaScript are minified, and images are aggressively optimized and cached in a CDN.
+              The result is a fast and efficient experience. At the time of writing this page is delivered in 18ms and weighs just 7 KiB.
             </li>
           </ul>
+
         </div>
       </div>
 

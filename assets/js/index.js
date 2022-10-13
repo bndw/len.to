@@ -3,6 +3,12 @@
 // license that can be found in the LICENSE file.
 import {tags} from '@params';
 
+// Enable JS features
+var hiddenJSFeatures = document.querySelectorAll(".nojs");
+[].forEach.call(hiddenJSFeatures, (el) => {
+    el.classList.remove("nojs");
+});
+
 const KeyBackspace = 8;
 const KeyEnter     = 13;
 const KeyEsc       = 27;

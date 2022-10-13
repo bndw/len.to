@@ -5,6 +5,10 @@ html, body {
   font-weight: 200;
 }
 
+.nojs {
+  display:none;
+}
+
 .container {
   width: 100%;
   max-width: 100%;
