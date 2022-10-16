@@ -29,13 +29,24 @@
           {{ range $images }}{{ $tagged = add $tagged (len .Params.Tags) }}{{ end }}
 
           <h2>About</h2>
+
           <ul class="outbound">
-            <li>len.to is a collection of photography by <a href="https://bdw.to">Ben Woodward</a>.</li>
             <li>
+              len.to is a collection of photos by <a href="https://bdw.to">Ben Woodward</a>.
               There are currently {{ len $images }} <a href="/archive">images</a>
-              indexed under {{ $tagged }} <a href="/tags">tags</a>.
+              indexed under {{ $tagged }} <a href="/tags">tags</a>. The most recent
+              <a href="{{ $mostRecent }}">image</a> was added on {{ .Site.LastChange.Format "Monday, January 2, 2006" }}.
             </li>
-            <li>The <a href="{{ $mostRecent }}">most recent</a> image was added on {{ .Site.LastChange.Format "Monday, January 2, 2006" }}.</li>
+          </ul>
+
+          <ul class="outbound">
+            <li>
+              The website is built from scratch using basic HTML, CSS, and good old fashioned JavaScript.
+              It's compiled into a static website using <a href="https://github.com/gohugoio/hugo">Hugo</a> and distributed as a Docker image.
+              The CSS and JavaScript are minified, and the images are cached in a CDN.
+              There are no advertisements, analytics, or tracking on this website. There are no fonts, scripts, or stylesheets
+              loaded from 3rd parties.
+            </li>
           </ul>
 
           <ul class="outbound">
@@ -44,18 +55,6 @@
             </li>
             <li>
               The content on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons BY-NC-ND</a>.
-            </li>
-          </ul>
-
-          <h2>Design</h2>
-          <ul class="outbound">
-            <li>
-              len.to is my opinionated take on a photo gallery.
-              It's built using basic HTML and CSS, and includes some intentional JavaScript to enable additional features.
-              It also works fine without JavaScript.
-              It's compiled into a static site using <a href="https://github.com/gohugoio/hugo">Hugo</a> and distributed as a Docker image.
-              CSS and JavaScript are minified, and images are aggressively optimized and cached in a CDN.
-              The result is a fast and efficient experience. At the time of writing this page is delivered in 18ms and weighs just 7 KiB.
             </li>
           </ul>
 
