@@ -6,32 +6,11 @@
 -->
 <head>
   <title>len.to</title>
-  {{ partial "header.html" . }}
-</head>
-<body>
-  <div class="container">
-
-    <div class="row">
-      <div class="three columns">
-        <a class="title" href="/">len.to</a>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="three columns left-side">
-        {{ partial "nav.html"}}
-        {{ partial "tag-list.html"}}
-      </div>
-      <div class="nine columns right-side">
-        <p>Sorry! Viewing a random image requires JavaScript.</p>
-      </div>
-    </div>
-  </div>
-
   {{ $urls := slice }}
   {{ range where .Site.RegularPages "Type" "img" }}
     {{ $urls = $urls | append .RelPermalink }} 
   {{ end }}
   {{ $js := resources.Get "js/random.js" | js.Build (dict "params" (dict "images" $urls )) | minify | fingerprint }}
-  <script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
-</body>
+  <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+</head>
+<noscript>Sorry! Viewing a random image requires JavaScript.</noscript>
